@@ -8,9 +8,9 @@ using Xamarin.Forms;
 
 namespace SimplePos
 {
-    public partial class MainPage : ContentPage
+    public partial class SimplePos : ContentPage
     {
-        public MainPage()
+        public SimplePos()
         {
             InitializeComponent();
         }

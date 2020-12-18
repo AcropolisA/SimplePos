@@ -10,7 +10,7 @@ namespace SimplePos
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new SimplePos();
         }
 
         protected override void OnStart()
