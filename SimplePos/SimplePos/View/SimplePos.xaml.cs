@@ -14,5 +14,9 @@ namespace SimplePos
         {
             InitializeComponent();
         }
+
+        public class App : Application
+        {
+        }
     }
 }
