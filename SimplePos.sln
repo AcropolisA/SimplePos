@@ -9,7 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplePos.Android", "Simple
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplePos.iOS", "SimplePos\SimplePos.iOS\SimplePos.iOS.csproj", "{0674EE66-AA14-44ED-BA46-285BEB36352D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplePos", "SimplePos\SimplePos\SimplePos.csproj", "{831C5CA0-80CC-4AA8-B069-73E8D5AAF9F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimplePos", "SimplePos\SimplePos\SimplePos.csproj", "{831C5CA0-80CC-4AA8-B069-73E8D5AAF9F8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D7A3B900-BE92-402F-9B89-70ADF48E402B}"
+	ProjectSection(SolutionItems) = preProject
+		Update.txt = Update.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
