@@ -11,64 +11,54 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.11" />
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1821" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Model\" />
+    <Folder Include="ViewModel\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="View\SimplePos.xaml.cs">
+    <Compile Update="View\Main\SimplePos.xaml.cs">
       <DependentUpon>SimplePos.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="View\A_FirstMenu\FreeOrderView.xaml">
+    <EmbeddedResource Update="View\FM\FMMenuList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\A_FirstMenu\GridOrderView.xaml">
+    <EmbeddedResource Update="View\FM\FMOrderList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\A_FirstMenu\ListOrderView.xaml">
+    <EmbeddedResource Update="View\FM\SimplePosFM.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\A_FirstMenu\MenuListView.xaml">
+    <EmbeddedResource Update="View\SetM\SimplePosSet.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\A_FirstMenu\OrderListView.xaml">
+    <EmbeddedResource Update="View\SM\SimplePosSM.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\B_SecondMenu\MenuSettingAddView.xaml">
+    <EmbeddedResource Update="View\TM\TMBill.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\B_SecondMenu\MenuSettingListView.xaml">
+    <EmbeddedResource Update="View\TM\SimplePosTM.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\C_ThridMenu\IncomeDailyView.xaml">
+    <EmbeddedResource Update="View\SM\SMAddMenu.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\C_ThridMenu\IncomeMasterView.xaml">
+    <EmbeddedResource Update="View\TM\TMMonthIncome.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\C_ThridMenu\IncomeMonthlyView.xaml">
+    <EmbeddedResource Update="View\TM\TMTodayIncome.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\C_ThridMenu\IncomeOrderListView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="View\C_ThridMenu\IncomeWeeklyView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="View\D_ForthMenu\SettingView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="View\MonthDate.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="View\TwoSelect.xaml">
+    <EmbeddedResource Update="View\TM\TMWeekIncome.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

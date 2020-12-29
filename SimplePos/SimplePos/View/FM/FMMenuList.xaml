@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimplePos.View.FMMenuList"
+             Title="Menu List">
+
+    <StackLayout>
+        <StackLayout Margin="20">
+            <Label Text="1번 메뉴                                      총 갯수 : "
+                   FontSize="Large"/>
+
+            <Stepper Maximum="10"
+                 Increment="1"
+                 HorizontalOptions="End" />
+            <Label Text="ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ" />
+        </StackLayout>
+
+        <StackLayout Margin="20">
+            <Label Text="2번 메뉴                                      총 갯수 : "
+                   FontSize="Large"/>
+
+            <Stepper Maximum="10"
+                 Increment="1"
+                 HorizontalOptions="End" />
+            <Label Text="ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ" />
+        </StackLayout>
+
+        <Button Text="확인" 
+                HorizontalOptions="Center"
+                VerticalOptions="EndAndExpand"
+                Clicked="OnBackFMOrderListPageButton"/>
+    </StackLayout>
+</ContentPage>

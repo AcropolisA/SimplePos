@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimplePos.View.SimplePosFM"
+             Title="First Menu"
+             Padding="10, 10, 10 ,10">
+
+    <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+                <GridLength x:Key="dividerThickness">2</GridLength>
+
+                <Style TargetType="BoxView">
+                    <Setter Property="Margin" Value="1, 1, 1, 1"/>
+                    <Setter Property="BackgroundColor" Value="Black" />
+                </Style>
+                
+                <Style TargetType="Label">
+                    <Setter Property="HorizontalOptions" Value="Center" />
+                    <Setter Property="VerticalOptions" Value="End" />
+                    <Setter Property="FontSize" Value="Large" />
+                </Style>
+            </ResourceDictionary>
+        </Grid.Resources>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <BoxView x:Name ="myBox"  Grid.Row ="1" Grid.Column="0"/>
+        <BoxView Grid.Row="1" Grid.Column="1" />
+        <BoxView Grid.Row="1" Grid.Column="2" />
+        <BoxView Grid.Row="1" Grid.Column="3" />
+        
+        <BoxView Grid.Row="2" Grid.Column="0" />
+        <BoxView Grid.Row="2" Grid.Column="1" />
+        <BoxView Grid.Row="2" Grid.Column="2" />
+        <BoxView Grid.Row="2" Grid.Column="3" />
+        
+        <BoxView Grid.Row="3" Grid.Column="0" />
+        <BoxView Grid.Row="3" Grid.Column="1" />
+        <BoxView Grid.Row="3" Grid.Column="2" />
+        <BoxView Grid.Row="3" Grid.Column="3" />
+
+        <BoxView Grid.Row="4" Grid.Column="0" />
+        <BoxView Grid.Row="4" Grid.Column="1" />
+        <BoxView Grid.Row="4" Grid.Column="2" />
+        <BoxView Grid.Row="4" Grid.Column="3" />
+
+        <BoxView Grid.Row="5" Grid.Column="0" />
+        <BoxView Grid.Row="5" Grid.Column="1" />
+        <BoxView Grid.Row="5" Grid.Column="2" />
+        <BoxView Grid.Row="5" Grid.Column="3" />
+
+        <Label Text="※ 박스를 클릭해 주세요."
+               Grid.Row="6" Grid.ColumnSpan="4"/>
+    </Grid>
+    
+</ContentPage>

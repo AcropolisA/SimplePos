@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Forms;
 
-namespace SimplePos
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace SimplePos.View
 {
-    public partial class SimplePos : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class SimplePosSet : ContentPage
     {
-        public SimplePos()
+        public SimplePosSet()
         {
             InitializeComponent();
         }
