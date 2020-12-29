@@ -16,5 +16,9 @@ namespace SimplePos.View
         {
             InitializeComponent();
         }
+
+        public class App : Application
+        {
+        }
     }
 }
