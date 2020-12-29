@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimplePos.View.SMAddMenu"
+             Title="Add Menu">
+
+    <StackLayout Padding="20, 0">
+        <Entry x:Name="entry1"
+               Text=""
+               Placeholder=" 클릭하여 이미지를 추가하세요 "
+               VerticalOptions="CenterAndExpand" />
+
+        <Entry x:Name="entry2"
+               Text=""
+               Placeholder=" 메뉴명을 입력하세요 "
+               VerticalOptions="CenterAndExpand" />
+
+        <Entry x:Name="entry3"
+               Text=""
+               Placeholder=" 가격을 입력하세요 "
+               VerticalOptions="CenterAndExpand" />
+
+        <Button x:Name="doneButton"
+                Text="완료"
+                IsEnabled="False"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                Clicked="OnDoneButtonClicked">
+        </Button>
+    </StackLayout>
+</ContentPage>

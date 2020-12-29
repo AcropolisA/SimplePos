@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimplePos.View.SimplePosTM"
+              Title="Income Money"
+             Padding="20, 20, 20, 20">
+    
+    <!-- 카드뷰로 할려고했더니 패키지 설치 호환이 되지 않아서 그냥 다른걸로 만들어 봄 -->
+    <StackLayout>
+        <Grid>
+            <BoxView BackgroundColor="AliceBlue" >
+                <BoxView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnTapGestureMonthTapped"
+                                              NumberOfTapsRequired="1" />
+                </BoxView.GestureRecognizers>
+            </BoxView>
+            <Label Text="이번 달 매출은 : ------------ 원 입니다."
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+        </Grid>
+
+        <Grid>
+            <BoxView BackgroundColor="AliceBlue" 
+                         HeightRequest="350"/>
+            <DatePicker VerticalOptions="Center"/>
+            <Label Text="※기준요일은 설정에서 변경가능합니다."
+                       HorizontalOptions="Start"
+                       VerticalOptions="End"
+                       FontSize="16"/>
+            <Label Text="숨기기         " 
+                       HorizontalOptions="End"
+                       VerticalOptions="End"
+                       FontSize="16"/>
+            <CheckBox HorizontalOptions="End"
+                          VerticalOptions="End"/>
+        </Grid>
+
+        <Grid >
+            <BoxView BackgroundColor="AliceBlue"
+                         HeightRequest="100">
+                <BoxView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnTapGestureTodayTapped"
+                                              NumberOfTapsRequired="1" />
+                </BoxView.GestureRecognizers>
+            </BoxView>
+            
+           
+            <Label Text="금일 매출"
+                   Padding="10"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Start"/>
+            <Label Text="총 매출액 :       ㅡㅡㅡ 원  " 
+                       HorizontalOptions="End"
+                       VerticalOptions="End"/>
+            <DatePicker HorizontalOptions="Start" 
+                            VerticalOptions="Center"/>
+        </Grid>
+
+        <Grid>
+            <BoxView BackgroundColor="AliceBlue"
+                         HeightRequest="100">
+                <BoxView.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnTapGestureWeekTapped"
+                                              NumberOfTapsRequired="1" />
+                </BoxView.GestureRecognizers>
+            </BoxView>
+            <Label Text="주간 매출"
+                       Padding="10"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Start"/>
+            <Label Text="총 매출액 :       ㅡㅡㅡ 원  "
+                       HorizontalOptions="End"
+                       VerticalOptions="End"/>
+            <DatePicker HorizontalOptions="Start" 
+                            VerticalOptions="Center"/>
+            <Label Text="~                                       "
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
+            <DatePicker HorizontalOptions="Center"
+                            VerticalOptions="Center"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>
