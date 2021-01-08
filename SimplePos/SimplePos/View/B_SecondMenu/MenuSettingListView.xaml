@@ -6,7 +6,7 @@
              xmlns:vm ="clr-namespace:SimplePos.ViewModel.B_SecondMenu"
              x:Class="SimplePos.View.B_SecondMenu.MenuSettingListView"
              
-             x:Name="MenuSettingListView"
+             x:Name="menuSettingListView"
              Title="메뉴 추가">
 
     <ContentPage.ToolbarItems>
