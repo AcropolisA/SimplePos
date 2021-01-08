@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -9,7 +10,6 @@ namespace SimplePos
         public App()
         {
             InitializeComponent();
-
             MainPage = new AppShell();
         }
 
