@@ -16,5 +16,9 @@ namespace SimplePos.View.A_FirstMenu
         {
             InitializeComponent();
         }
+        async void OnGoOrderListViewClicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
     }
 }
