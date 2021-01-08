@@ -7,18 +7,14 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace SimplePos.View.A_FirstMenu
+namespace SimplePos
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ListOrderView : ContentPage
+    public partial class AppShell : Xamarin.Forms.Shell
     {
-        public ListOrderView()
+        public AppShell()
         {
             InitializeComponent();
-        }
-        void GoOrderListView(object sender, EventArgs args)
-        {
-            Navigation.PushAsync(new OrderListView());
         }
     }
 }

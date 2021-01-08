@@ -10,7 +10,7 @@ namespace SimplePos
         {
             InitializeComponent();
 
-            MainPage = new SimplePos();
+            MainPage = new AppShell();
         }
 
         protected override void OnStart()

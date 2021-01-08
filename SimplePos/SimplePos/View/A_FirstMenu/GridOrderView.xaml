@@ -1,12 +1,108 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SimplePos.View.A_FirstMenu.GridOrderView">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+             x:Class="SimplePos.View.A_FirstMenu.GridOrderView"
+             xmlns:vm="clr-namespace:SimplePos.ViewModel.A_FirstMenu"
+             Title="메인 메뉴">
+
+    <ContentPage.Resources>
+        <Style TargetType="BoxView">
+            <Setter Property="Color" Value="White" />
+        </Style>
+    </ContentPage.Resources>
+
+    <Grid ColumnSpacing="1"
+          RowSpacing="1"
+          BackgroundColor="Black">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <BoxView Grid.Row="0" Grid.Column="0">
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="GoOrderListView"
+                                      NumberOfTapsRequired="1" />
+            </BoxView.GestureRecognizers>
+        </BoxView>
+        <BoxView Grid.Row="0" Grid.Column="1">
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="GoOrderListView"
+                                      NumberOfTapsRequired="1" />
+            </BoxView.GestureRecognizers>
+        </BoxView>
+        <BoxView Grid.Row="0" Grid.Column="2">
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="GoOrderListView"
+                                      NumberOfTapsRequired="1" />
+            </BoxView.GestureRecognizers>
+        </BoxView>
+
+        <BoxView Grid.Row="1" Grid.Column="0">
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="GoOrderListView"
+                                      NumberOfTapsRequired="1" />
+            </BoxView.GestureRecognizers>
+        </BoxView>
+        <BoxView Grid.Row="1" Grid.Column="1">
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="GoOrderListView"
+                                      NumberOfTapsRequired="1" />
+            </BoxView.GestureRecognizers>
+        </BoxView>
+        <BoxView Grid.Row="1" Grid.Column="2">
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="GoOrderListView"
+                                      NumberOfTapsRequired="1" />
+            </BoxView.GestureRecognizers>
+        </BoxView>
+
+        <BoxView Grid.Row="2" Grid.Column="0">
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="GoOrderListView"
+                                      NumberOfTapsRequired="1" />
+            </BoxView.GestureRecognizers>
+        </BoxView>
+        <BoxView Grid.Row="2" Grid.Column="1">
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="GoOrderListView"
+                                      NumberOfTapsRequired="1" />
+            </BoxView.GestureRecognizers>
+        </BoxView>
+        <BoxView Grid.Row="2" Grid.Column="2">
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="GoOrderListView"
+                                      NumberOfTapsRequired="1" />
+            </BoxView.GestureRecognizers>
+        </BoxView>
+
+        <BoxView Grid.Row="3" Grid.Column="0">
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="GoOrderListView"
+                                      NumberOfTapsRequired="1" />
+            </BoxView.GestureRecognizers>
+        </BoxView>
+        <BoxView Grid.Row="3" Grid.Column="1">
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="GoOrderListView"
+                                      NumberOfTapsRequired="1" />
+            </BoxView.GestureRecognizers>
+        </BoxView>
+        <BoxView Grid.Row="3" Grid.Column="2">
+            <BoxView.GestureRecognizers>
+                <TapGestureRecognizer Tapped="GoOrderListView"
+                                      NumberOfTapsRequired="1" />
+            </BoxView.GestureRecognizers>
+        </BoxView>
+
+
+    </Grid>
 </ContentPage>
