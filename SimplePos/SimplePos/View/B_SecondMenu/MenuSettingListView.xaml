@@ -1,12 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SimplePos.View.B_SecondMenu.MenuSettingListView">
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:view="clr-namespace:SimplePos.View.B_SecondMenu"
+             xmlns:vm ="clr-namespace:SimplePos.ViewModel.B_SecondMenu"
+             x:Class="SimplePos.View.B_SecondMenu.MenuSettingListView"
+             
+             x:Name="MenuSettingListView">
+
+    <ContentPage.BindingContext>
+        <vm:MenuSettingListViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <!-- Button Section
+                 뒤로가기, 확인 -->
+            <StackLayout Orientation="Horizontal">
+                <Button HorizontalOptions="StartAndExpand"
+                        Text="뒤로가기"
+                        Margin="5"
+                        HeightRequest="60"
+                        WidthRequest="120"/>
+                <Button HorizontalOptions="End"
+                        Text="확인"
+                        Margin="5"
+                        HeightRequest="60"
+                        WidthRequest="120"/>
+            </StackLayout> 
+
+            <StackLayout>
+                <ListView>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <view:MenuListCell/>
+
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

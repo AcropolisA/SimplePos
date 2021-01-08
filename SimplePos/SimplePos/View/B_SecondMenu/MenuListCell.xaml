@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SimplePos.Resource"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             x:Class="SimplePos.View.B_SecondMenu.MenuListCell">
+    <ContentView Padding="5">
+        <Frame OutlineColor="Black">
+            <StackLayout>
+                <StackLayout Padding="10"
+                         BackgroundColor="White">
+                    <Grid Margin="15, 5, 15, 5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <d:Image Grid.Column="0" 
+                                 Source="{local:ImageResource SimplePos.Resource.ImageChange.png}"/>
+                        <d:Label Grid.Column="1" Grid.ColumnSpan="2" Text="메뉴명"/>
+                        <d:Label Grid.Column="3" HorizontalTextAlignment="End" Text="7000"/>
+                        <Image Grid.Column="0" 
+                           Source="{Binding IMGSource}"/>
+
+                        <Label Grid.Column="1"
+                           Grid.ColumnSpan="2"
+                           Text="{Binding Name}"/>
+
+                        <Label Grid.Column="3" 
+                           HorizontalTextAlignment="End"
+                           Text="{Binding Price}"/>
+                    </Grid>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+    </ContentView>
+</ViewCell>

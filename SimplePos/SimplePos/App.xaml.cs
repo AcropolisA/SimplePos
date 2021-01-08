@@ -1,16 +1,21 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace SimplePos
 {
+
+
+
     public partial class App : Application
     {
         public App()
         {
             InitializeComponent();
 
-            MainPage = new SimplePos();
+            MainPage = new NavigationPage(new SimplePos());
+   
         }
 
         protected override void OnStart()
