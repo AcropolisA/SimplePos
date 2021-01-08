@@ -36,7 +36,7 @@
         <Tab Title="메인 메뉴" 
              Icon="MainMenuIcon.png">
         <ShellContent>
-                <views:FreeOrderView /> 
+                <views:GridOrderView /> 
         </ShellContent>
         </Tab>
         

@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace Xamarin.FormsBook.Toolkit
+namespace SimplePos.ViewModel
 {
     public class ViewModelBase : INotifyPropertyChanged
     {

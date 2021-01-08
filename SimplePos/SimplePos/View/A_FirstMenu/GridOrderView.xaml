@@ -30,15 +30,17 @@
         <BoxView Grid.Row="0" Grid.Column="0">
             <BoxView.GestureRecognizers>
                 <TapGestureRecognizer Tapped="GoOrderListView"
-                                      NumberOfTapsRequired="1" />
+                                          NumberOfTapsRequired="1" />
             </BoxView.GestureRecognizers>
         </BoxView>
+        
         <BoxView Grid.Row="0" Grid.Column="1">
             <BoxView.GestureRecognizers>
                 <TapGestureRecognizer Tapped="GoOrderListView"
                                       NumberOfTapsRequired="1" />
             </BoxView.GestureRecognizers>
         </BoxView>
+        
         <BoxView Grid.Row="0" Grid.Column="2">
             <BoxView.GestureRecognizers>
                 <TapGestureRecognizer Tapped="GoOrderListView"
@@ -52,12 +54,14 @@
                                       NumberOfTapsRequired="1" />
             </BoxView.GestureRecognizers>
         </BoxView>
+        
         <BoxView Grid.Row="1" Grid.Column="1">
             <BoxView.GestureRecognizers>
                 <TapGestureRecognizer Tapped="GoOrderListView"
                                       NumberOfTapsRequired="1" />
             </BoxView.GestureRecognizers>
         </BoxView>
+        
         <BoxView Grid.Row="1" Grid.Column="2">
             <BoxView.GestureRecognizers>
                 <TapGestureRecognizer Tapped="GoOrderListView"

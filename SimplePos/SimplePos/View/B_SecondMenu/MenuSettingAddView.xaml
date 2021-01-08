@@ -1,12 +1,55 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SimplePos.View.B_SecondMenu.MenuSettingAddView">
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             x:Class="SimplePos.View.B_SecondMenu.MenuSettingAddView"
+             x:Name="menuAddView">
+
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <!-- Button Section
+                 뒤로가기, 확인 -->
+            <StackLayout Orientation="Horizontal">
+                <Button HorizontalOptions="StartAndExpand"
+                        Text="뒤로가기"
+                        Margin="5"
+                        HeightRequest="60"
+                        WidthRequest="120"/>
+                <Button HorizontalOptions="End"
+                        Text="확인"
+                        Margin="5"
+                        HeightRequest="60"
+                        WidthRequest="120"/>
+            </StackLayout>
+            <!-- Main Section -->
+            <StackLayout Margin="10"
+                         HeightRequest="{Binding Source={x:Reference menuAddView}, 
+                                                 Path=WidthRequest}"
+                         WidthRequest="{Binding Source={x:Reference menuAddView}, 
+                                                Path=WidthRequest}">
+                <Image Source="{Binding MenuImage}"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand" />
+                <Button Text="눌러서 이미지 변경"
+                        HorizontalOptions="Center"
+                        BackgroundColor="White"
+                        TextColor="DeepPink">
+                </Button>
+            </StackLayout>
+            <StackLayout>
+                <TableView>
+                    <TableSection Title="메뉴 설정">
+                        <EntryCell Label="메뉴명"
+                                   Text="{Binding MenuName}"
+                                   Placeholder="국밥"
+                                   Keyboard="Text"/>
+                        <EntryCell Label="가격"
+                                   Text="{Binding MenuPrice}"
+                                   Placeholder="6000"
+                                   Keyboard="Numeric"/>
+                    </TableSection>
+                </TableView>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
