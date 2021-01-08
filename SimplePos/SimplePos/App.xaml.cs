@@ -5,17 +5,12 @@ using Xamarin.Forms.Xaml;
 
 namespace SimplePos
 {
-
-
-
     public partial class App : Application
     {
         public App()
         {
             InitializeComponent();
-
-            MainPage = new NavigationPage(new SimplePos());
-   
+            MainPage = new AppShell();
         }
 
         protected override void OnStart()

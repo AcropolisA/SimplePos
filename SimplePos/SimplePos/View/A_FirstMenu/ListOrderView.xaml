@@ -1,12 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SimplePos.View.A_FirstMenu.ListOrderView">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+             x:Class="SimplePos.View.A_FirstMenu.ListOrderView"
+             xmlns:toolkit="clr-namespace:SimplePos.Model"
+             Title="메인 메뉴">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="ToolbarPlusIcon.png" Command="{Binding AddItemCommand}"/>
+    </ContentPage.ToolbarItems>
+
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="10, 20, 10, 0"
+                    Android="10, 0"
+                    WinPhone="10, 0" />
+    </ContentPage.Padding>
+    
+    <ListView ItemsSource="{x:Static toolkit:NamedColor.All}"
+              HasUnevenRows="True">
+        <ListView.RowHeight>
+            <OnPlatform x:TypeArguments="x:Int32"
+                        iOS="80"
+                        Android="80" />
+        </ListView.RowHeight>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ContentView Padding="5">
+                        <Frame OutlineColor="Black"
+                               Padding="1">
+                            <StackLayout Orientation="Vertical">
+                                <BoxView x:Name="boxView"
+                                         Color="{Binding Color}"
+                                         WidthRequest="30"
+                                         HeightRequest="30" />
+                                <Label Text="{Binding FriendlyName}"
+                                           FontSize="Large"
+                                           VerticalOptions="Start"
+                                           HorizontalOptions="Center"/>
+                                <Label Text="{Binding RgbDisplay, StringFormat='RGB = {0}'}"
+                                           FontSize="Medium"
+                                           VerticalOptions="Center" />
+                            </StackLayout>
+                        </Frame>
+                        <ContentView.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="GoOrderListView"
+                                      NumberOfTapsRequired="1" />
+                        </ContentView.GestureRecognizers>
+                    </ContentView>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </ContentPage>

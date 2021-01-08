@@ -1,12 +1,90 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SimplePos.View.OrderListView">
+             x:Class="SimplePos.View.OrderListView"
+             Title="OrderList">
+    
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Grid VerticalOptions="Fill">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="OnGoMenuListTapped"
+                        NumberOfTapsRequired="1" />
+                </Grid.GestureRecognizers>
+                
+                <BoxView Color="Black"/>
+                <BoxView Color="White"
+                         Margin="15"
+                         HeightRequest="200" />
+
+                <Label Text="주문 시각"
+                           HorizontalOptions="Start"
+                           VerticalOptions="Start"/>
+                <Label Text="테이블 명"
+                           HorizontalOptions="End"
+                           VerticalOptions="Start"/>
+                <Label Text="주문 개수"
+                           HorizontalOptions="Start"
+                           VerticalOptions="End"/>
+                <Label Text="총 가격"
+                           HorizontalOptions="End"
+                           VerticalOptions="End"/>
+            </Grid>
+
+            <Grid VerticalOptions="FillAndExpand"
+                  Margin="20,0,20,0">
+                <BoxView Color="Black"/>
+                <BoxView Color="White"
+                         Margin="15"/>
+
+                <Label Text="메뉴 명"
+                       HorizontalOptions="Start"/>
+                <Label Text="서빙 완료"
+                       HorizontalOptions="End"
+                       FontSize="Medium"
+                       Margin="0, 0, 50, 0"/>
+                <CheckBox HorizontalOptions="End"
+                          Margin="20" />
+            </Grid>
+
+            <Grid VerticalOptions="FillAndExpand"
+                  Margin="20,0,20,0">
+                <BoxView Color="Black"/>
+                <BoxView Color="White"
+                         Margin="15"/>
+
+                <Label Text="메뉴 명"
+                       HorizontalOptions="Start"/>
+                <Label Text="서빙 완료"
+                       HorizontalOptions="End"
+                       FontSize="Medium"
+                       Margin="0, 0, 50, 0"/>
+                <CheckBox HorizontalOptions="End"
+                          Margin="20" />
+            </Grid>
+
+            <Grid VerticalOptions="FillAndExpand"
+                  Margin="20,0,20,0">
+                <BoxView Color="Black"/>
+                <BoxView Color="White"
+                         Margin="15"/>
+
+                <Label Text="메뉴 명"
+                       HorizontalOptions="Start"/>
+                <Label Text="서빙 완료"
+                       HorizontalOptions="End"
+                       FontSize="Medium"
+                       Margin="0, 0, 50, 0"/>
+                <CheckBox HorizontalOptions="End"
+                          Margin="20" />
+            </Grid>
+
+            <Grid VerticalOptions="Fill">
+                <Button Text="결제 완료"
+                        Margin="10"
+                        Clicked="OnTwoSelectClicked"/>
+            </Grid>
         </StackLayout>
-    </ContentPage.Content>
+        </ContentPage.Content>
 </ContentPage>

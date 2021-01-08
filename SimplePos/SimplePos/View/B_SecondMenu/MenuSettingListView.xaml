@@ -6,11 +6,17 @@
              xmlns:vm ="clr-namespace:SimplePos.ViewModel.B_SecondMenu"
              x:Class="SimplePos.View.B_SecondMenu.MenuSettingListView"
              
-             x:Name="MenuSettingListView">
+             x:Name="MenuSettingListView"
+             Title="메뉴 추가">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="ToolbarPlusIcon.png" Command="{Binding AddItemCommand}" />
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.BindingContext>
         <vm:MenuSettingListViewModel/>
     </ContentPage.BindingContext>
+
     <ContentPage.Content>
         <StackLayout>
             <!-- Button Section

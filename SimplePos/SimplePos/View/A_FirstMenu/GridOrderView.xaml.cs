@@ -16,5 +16,19 @@ namespace SimplePos.View.A_FirstMenu
         {
             InitializeComponent();
         }
+        void GoOrderListView(object sender, EventArgs args)
+        {
+            BoxView boxview = (BoxView)sender;
+            int tapCount = 0;
+
+            tapCount++;
+            // watch the monkey go from color to black&white!
+            if (tapCount >= 1)
+            {
+                Navigation.PushAsync(new OrderListView());
+                boxview.Color = Color.Blue;
+            }
+            else { }
+        }
     }
 }

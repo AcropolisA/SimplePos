@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SimplePos.View.A_FirstMenu.FreeOrderView">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:SimplePos.View.A_FirstMenu"
+             x:Class="SimplePos.View.A_FirstMenu.FreeOrderView"
+             Title="메인 메뉴">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="ToolbarPlusIcon.png" Clicked="OnCreateBox"/>
+    </ContentPage.ToolbarItems>
+
 </ContentPage>
