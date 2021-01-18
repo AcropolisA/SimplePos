@@ -2,32 +2,29 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:img ="clr-namespace:SimplePos.Resource;assembly=SimplePos"
              x:Class="SimplePos.View.B_SecondMenu.MenuSettingAddView"
              x:Name="menuAddView">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            Name="추가 완료"
+            Order="Primary"
+            IconImageSource="ToolbarPlusIcon.png" 
+            Clicked="OnComplete">
+        </ToolbarItem>
+
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
         <StackLayout>
-            <!-- Button Section
-                 뒤로가기, 확인 -->
-            <StackLayout Orientation="Horizontal">
-                <Button HorizontalOptions="StartAndExpand"
-                        Text="뒤로가기"
-                        Margin="5"
-                        HeightRequest="60"
-                        WidthRequest="120"/>
-                <Button HorizontalOptions="End"
-                        Text="확인"
-                        Margin="5"
-                        HeightRequest="60"
-                        WidthRequest="120"/>
-            </StackLayout>
             <!-- Main Section -->
             <StackLayout Margin="10"
                          HeightRequest="{Binding Source={x:Reference menuAddView}, 
                                                  Path=WidthRequest}"
                          WidthRequest="{Binding Source={x:Reference menuAddView}, 
                                                 Path=WidthRequest}">
-                <Image Source="{Binding MenuImage}"
+                <Image Source="{img:ImageResource SimplePos.Resource.ImageChange.png}"
                        HorizontalOptions="CenterAndExpand"
                        VerticalOptions="CenterAndExpand" />
                 <Button Text="눌러서 이미지 변경"

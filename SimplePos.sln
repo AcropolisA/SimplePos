@@ -3,16 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplePos.Android", "SimplePos\SimplePos.Android\SimplePos.Android.csproj", "{5E2759FA-C895-47E5-BFD6-2757A44BC214}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplePos.iOS", "SimplePos\SimplePos.iOS\SimplePos.iOS.csproj", "{0674EE66-AA14-44ED-BA46-285BEB36352D}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimplePos", "SimplePos\SimplePos\SimplePos.csproj", "{831C5CA0-80CC-4AA8-B069-73E8D5AAF9F8}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D7A3B900-BE92-402F-9B89-70ADF48E402B}"
 	ProjectSection(SolutionItems) = preProject
 		Update.txt = Update.txt
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplePos.Android", "SimplePos\SimplePos.Android\SimplePos.Android.csproj", "{5E2759FA-C895-47E5-BFD6-2757A44BC214}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplePos.iOS", "SimplePos\SimplePos.iOS\SimplePos.iOS.csproj", "{0674EE66-AA14-44ED-BA46-285BEB36352D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplePos", "SimplePos\SimplePos\SimplePos.csproj", "{831C5CA0-80CC-4AA8-B069-73E8D5AAF9F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
