@@ -11,6 +11,7 @@ namespace SimplePos.ViewModel.B_SecondMenu
         Uri imageSource = new Uri("Resource/ImageChange.png");
         string menuName;
         string menuPrice;
+        string menuAllPrice;
 
         public MenuSettingAddViewModel()
         {

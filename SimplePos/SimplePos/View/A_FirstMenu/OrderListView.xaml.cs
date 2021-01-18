@@ -18,10 +18,10 @@ namespace SimplePos.View
         public OrderListView()
         {
             InitializeComponent();
+            tm.Text = DateTime.Now.ToString("MM/dd hh:mm:ss");
         }
         async void OnTwoSelectClicked(object sender, EventArgs e)
         {
-            
             var choice = await DisplayActionSheet("결제 방식을 선택해 주세요.", "취소", null, "카드", "현금");
             Debug.WriteLine("Action: " + choice);
             switch(choice)

@@ -16,5 +16,10 @@ namespace SimplePos.View.C_ThridMenu
         {
             InitializeComponent();
         }
+
+        private void OnGoDailyViewTapped(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new IncomeDailyView());
+        }
     }
 }

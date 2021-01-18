@@ -16,5 +16,10 @@ namespace SimplePos.View.C_ThridMenu
         {
             InitializeComponent();
         }
+
+        private void OnGoOrderListViewTapped(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new IncomeOrderListView());
+        }
     }
 }

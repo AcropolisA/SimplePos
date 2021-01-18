@@ -28,11 +28,12 @@
                 </Setter>
             </Style>
             <Style TargetType="BoxView">
-                <Setter Property="Margin" Value="10" />
+                <Setter Property="Margin" Value="3" />
+                <Setter Property="CornerRadius" Value="15" />
             </Style>
             <Style TargetType="Label">
                 <Setter Property="FontSize" Value="Title" />
-                <Setter Property="Margin" Value="25" />
+                <Setter Property="Margin" Value="20" />
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Center" />
             </Style>
@@ -43,6 +44,11 @@
             </Style>
             <Style TargetType="Grid">
                 <Setter Property="Margin" Value="5" />
+            </Style>
+            <Style TargetType="Frame">
+                <Setter Property="BorderColor" Value="Black" />
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="Padding" Value="17" />
             </Style>
         </ResourceDictionary>
     </Application.Resources>

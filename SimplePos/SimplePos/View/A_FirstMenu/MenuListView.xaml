@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:view="clr-namespace:SimplePos.View.B_SecondMenu"
+             xmlns:local="clr-namespace:SimplePos.Model"
              x:Class="SimplePos.View.A_FirstMenu.MenuListView"
              Title="MenuListView">
 
@@ -10,15 +12,19 @@
     </ContentPage.ToolbarItems>
 
     <StackLayout>
-
         <Grid VerticalOptions="FillAndExpand"
                   Margin="20,0,20,0">
             <BoxView Color="Black"/>
             <BoxView Color="White"
-                         Margin="15"/>
+                         Margin="5"/>
 
-            <Label Text="메뉴 명"
-                       HorizontalOptions="Start"/>
+            <Label Text="{Binding MenuName}"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Start"/>
+
+            <Label Text="{Binding MenuPrice}"
+                   HorizontalOptions="Start"
+                   VerticalOptions="End"/>
 
             <Stepper x:Name="_stepper1"
                      Maximum="20"
@@ -28,61 +34,31 @@
             <Label Text="{Binding Source={x:Reference _stepper1}, Path=Value, StringFormat='주문 갯수 : {0:F0}'}"
                    HorizontalOptions="End"
                    VerticalOptions="Center" />
-        </Grid>
 
-        <Grid VerticalOptions="FillAndExpand"
-                  Margin="20,0,20,0" >
-            <BoxView Color="Black"/>
-            <BoxView Color="White"
-                         Margin="15"/>
-
-            <Label Text="메뉴 명"
-                       HorizontalOptions="Start"/>
-            <Stepper x:Name="_stepper2"
-                     Maximum="20"
-                     Increment="1"
-                     HorizontalOptions="End"
-                     VerticalOptions="End"/>
-            <Label Text="{Binding Source={x:Reference _stepper2}, Path=Value, StringFormat='주문 갯수 : {0:F0}'}"
-                   HorizontalOptions="End"
-                   VerticalOptions="Center" />
-        </Grid>
-
-        <Grid VerticalOptions="FillAndExpand"
-                  Margin="20,0,20,0">
-            <BoxView Color="Black"/>
-            <BoxView Color="White"
-                         Margin="15"/>
-
-            <Label Text="메뉴 명"
-                       HorizontalOptions="Start"/>
-            <Stepper x:Name="_stepper3"
-                     Maximum="20"
-                     Increment="1"
-                     HorizontalOptions="End"
-                     VerticalOptions="End"/>
-            <Label Text="{Binding Source={x:Reference _stepper3}, Path=Value, StringFormat='주문 갯수 : {0:F0}'}"
-                   HorizontalOptions="End"
-                   VerticalOptions="Center" />
-        </Grid>
-        
-        <Grid VerticalOptions="FillAndExpand"
-                  Margin="20,0,20,0">
-            <BoxView Color="Black"/>
-            <BoxView Color="White"
-                         Margin="15"/>
-
-            <Label Text="메뉴 명"
-                       HorizontalOptions="Start"/>
-            <Stepper x:Name="_stepper4"
-                     Maximum="20"
-                     Increment="1"
-                     HorizontalOptions="End"
-                     VerticalOptions="End"/>
-            <Label Text="{Binding Source={x:Reference _stepper4}, Path=Value, StringFormat='주문 갯수 : {0:F0}'}"
-                   HorizontalOptions="End"
-                   VerticalOptions="Center" />
+            <!-- 테스트용 -->
+            <!--<ListView ItemsSource="{x:Static local:MenuList.All}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout>
+                                    <Label Text="{Binding MenuName}" />
+                                    <Label Text="{Binding MenuPrice}"/>
+                                    <Stepper Margin="10"
+                                             x:Name="_stepper"
+                                             Maximum="10"
+                                             Increment="1"
+                                             HorizontalOptions="End"
+                                             VerticalOptions="End" />
+                                    <Label Text="{Binding Source={x:Reference _stepper}, Path=Value, StringFormat='주문 갯수 : {0:F0}'}"
+                                           HorizontalOptions="End"
+                                           VerticalOptions="Center" />
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
         </Grid>
     </StackLayout>
-
 </ContentPage>

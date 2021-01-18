@@ -4,11 +4,10 @@ using System.Text;
 
 namespace SimplePos.Model
 {
-    public class Menu
+    class MenuOrderHistory
     {
-        string ImageSource { get; set; }
+        string MenuNumber { get; set; }
         string MenuName { get; set; }
-        string MenuPrice {get; set;}
-        string MenuAllPrice { get; set; }
+        string MenuPrice { get; set; }
     }
 }
