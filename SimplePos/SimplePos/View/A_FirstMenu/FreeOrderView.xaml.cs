@@ -7,82 +7,120 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using SimplePos.Model;
 
 namespace SimplePos.View.A_FirstMenu
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class FreeOrderView : ContentPage
     {
+        class DragInfo
+        {
+            public DragInfo(long id, Point pressPoint)
+            {
+                Id = id;
+                PressPoint = pressPoint;
+            }
+
+            public long Id { private set; get; }
+
+            public Point PressPoint { private set; get; }
+        }
+
+        Dictionary<BoxView, DragInfo> dragDictionary = new Dictionary<BoxView, DragInfo>();
+
         public FreeOrderView()
         {
             InitializeComponent();
+            AddBoxViewToLayout();
         }
-        
-        public void OnCreateBox(object sender, EventArgs e)
+        void OnNewBoxViewClicked(object sender, EventArgs args)
         {
-            BoxView boxview2 = new BoxView
+            AddBoxViewToLayout();
+        }
+
+        void OnClearClicked(object sender, EventArgs args)
+        {
+            absoluteLayout.Children.Clear();
+            dragDictionary.Clear();
+        }
+
+        void AddBoxViewToLayout()
+        {
+            BoxView boxView = new BoxView
             {
-                Color = Color.Black,
                 WidthRequest = 100,
                 HeightRequest = 100,
-                HorizontalOptions = LayoutOptions.Center,
-                VerticalOptions = LayoutOptions.CenterAndExpand,
+                Color = Color.Black
             };
-            this.Padding = new Thickness(10, 0, 10, 5);
-            this.Content = new StackLayout
-            {
-                Children =
-                {
-                    boxview2
-                }
-            };
-        }
-    }
-    public class DraggableBoxView : BoxView
-    {
-        bool isBeingDragged;
-        long touchId;
-        Point pressPoint;
 
-        public DraggableBoxView()
-        {
-            TouchEffect touchEffect = new TouchEffect
-            {
-                Capture = true
+            TouchEffect touchEffect = new TouchEffect();
+            touchEffect.TouchAction += OnTouchEffectAction;
+            boxView.Effects.Add(touchEffect);
+            absoluteLayout.Children.Add(boxView);
+
+            var tapGestureRecognizer = new TapGestureRecognizer();
+            tapGestureRecognizer.Tapped += (s, e) => {
+                Navigation.PushAsync(new OrderListView());
             };
-            touchEffect.TouchAction += TouchEffect_TouchAction;
-            Effects.Add(touchEffect);
+            boxView.GestureRecognizers.Add(tapGestureRecognizer);
         }
 
-        void TouchEffect_TouchAction(object sender, EventArgs args)
+        void OnTouchEffectAction(object sender, TouchActionEventArgs args)
         {
-            var TouchArgs = (TouchActionEventArgs)args;
-            switch (TouchArgs.Type)
+            BoxView boxView = sender as BoxView;
+
+            switch (args.Type)
             {
                 case TouchActionType.Pressed:
-                    if (!isBeingDragged)
+                    // Don't allow a second touch on an already touched BoxView
+                    if (!dragDictionary.ContainsKey(boxView))
                     {
-                        isBeingDragged = true;
-                        touchId = TouchArgs.Id;
-                        pressPoint = TouchArgs.Location;
+                        dragDictionary.Add(boxView, new DragInfo(args.Id, args.Location));
+
+                        // Set Capture property to true
+                        TouchEffect touchEffect = (TouchEffect)boxView.Effects.FirstOrDefault(e => e is TouchEffect);
+                        touchEffect.Capture = true;
                     }
                     break;
 
                 case TouchActionType.Moved:
-                    if (isBeingDragged && touchId == TouchArgs.Id)
+                    if (dragDictionary.ContainsKey(boxView) && dragDictionary[boxView].Id == args.Id)
                     {
-                        TranslationX += TouchArgs.Location.X - pressPoint.X;
-                        TranslationY += TouchArgs.Location.Y - pressPoint.Y;
+                        Rectangle rect = AbsoluteLayout.GetLayoutBounds(boxView);
+                        Point initialLocation = dragDictionary[boxView].PressPoint;
+                        rect.X += args.Location.X - initialLocation.X;
+                        rect.Y += args.Location.Y - initialLocation.Y;
+                        AbsoluteLayout.SetLayoutBounds(boxView, rect);
                     }
                     break;
 
                 case TouchActionType.Released:
-                    if (isBeingDragged && touchId == TouchArgs.Id)
+                    if (dragDictionary.ContainsKey(boxView) && dragDictionary[boxView].Id == args.Id)
                     {
-                        isBeingDragged = false;
+                        dragDictionary.Remove(boxView);
                     }
                     break;
             }
         }
     }
 }
+
+/*public void OnCreateBox(object sender, EventArgs e)
+        {
+            BoxView boxView = new BoxView
+            {
+                WidthRequest = 100,
+                HeightRequest = 100,
+                Color = Color.Black,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center
+            };
+            this.Content = new StackLayout
+            {
+                Children =
+                {
+                    boxView
+                }
+            };
+        }*/

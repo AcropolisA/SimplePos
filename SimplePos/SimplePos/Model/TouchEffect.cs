@@ -1,5 +1,7 @@
-﻿using System;
-using SimplePos.View.A_FirstMenu;
+﻿using SimplePos.Model;
+using System;
+using System.Collections.Generic;
+using System.Text;
 using Xamarin.Forms;
 
 namespace SimplePos.Model
@@ -13,10 +15,13 @@ namespace SimplePos.Model
         Exited,
         Cancelled
     }
+}
 
+namespace SimplePos.Model
+{
     public class TouchEffect : RoutingEffect
     {
-        public event EventHandler TouchAction;
+        public event TouchActionEventHandler TouchAction;
 
         public TouchEffect() : base("XamarinDocs.TouchEffect")
         {
@@ -29,6 +34,10 @@ namespace SimplePos.Model
             TouchAction?.Invoke(element, args);
         }
     }
+}
+
+namespace SimplePos.Model
+{
     public class TouchActionEventArgs : EventArgs
     {
         public TouchActionEventArgs(long id, TouchActionType type, Point location, bool isInContact)
@@ -47,4 +56,10 @@ namespace SimplePos.Model
 
         public bool IsInContact { private set; get; }
     }
+}
+
+
+namespace SimplePos.Model
+{
+    public delegate void TouchActionEventHandler(object sender, TouchActionEventArgs args);
 }

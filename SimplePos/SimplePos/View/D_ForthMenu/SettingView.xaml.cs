@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using SimplePos.View;
 
 namespace SimplePos.View.D_ForthMenu
 {
@@ -15,6 +16,9 @@ namespace SimplePos.View.D_ForthMenu
         public SettingView()
         {
             InitializeComponent();
+        }
+        private void RadioButton_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {            
         }
     }
 }

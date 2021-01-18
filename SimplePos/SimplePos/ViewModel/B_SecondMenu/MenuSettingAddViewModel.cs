@@ -15,6 +15,7 @@ namespace SimplePos.ViewModel.B_SecondMenu
         string imageSource = "Resource.ImageChange.png";
         string menuName;
         string menuPrice;
+        string menuAllPrice;
 
         private MenuList menulist = Singletone<MenuList>.Get();
         private Model.Menu menu;

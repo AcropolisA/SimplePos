@@ -6,7 +6,38 @@
              Title="메인 메뉴">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="ToolbarPlusIcon.png" Clicked="OnCreateBox"/>
+        <ToolbarItem IconImageSource="ToolbarPlusIcon.png" Clicked="OnNewBoxViewClicked"/>
     </ContentPage.ToolbarItems>
 
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.Resources>
+            <ResourceDictionary>
+                <Style TargetType="Button">
+                    <Setter Property="HorizontalOptions" Value="Center" />
+                </Style>
+            </ResourceDictionary>
+        </Grid.Resources>
+
+        <Button Text="Clear"
+                Grid.Row="0"
+                Grid.Column="1"
+                Clicked="OnClearClicked" />
+
+        <AbsoluteLayout x:Name="absoluteLayout"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"/>
+    </Grid>
 </ContentPage>

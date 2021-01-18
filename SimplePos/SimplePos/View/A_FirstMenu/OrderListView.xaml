@@ -3,7 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SimplePos.View.OrderListView"
              Title="OrderList">
-    
+
+    <ContentPage.Resources>
+        <Style TargetType="Entry">
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="HorizontalOptions" Value="End"/>
+            <Setter Property="VerticalOptions" Value="Start"/>
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+        </Style>
+    </ContentPage.Resources>
+
     <ContentPage.Content>
         <StackLayout>
             <Grid VerticalOptions="Fill">
@@ -12,31 +21,41 @@
                         Tapped="OnGoMenuListTapped"
                         NumberOfTapsRequired="1" />
                 </Grid.GestureRecognizers>
-                
+
                 <BoxView Color="Black"/>
                 <BoxView Color="White"
-                         Margin="15"
+                         Margin="5"
                          HeightRequest="200" />
 
-                <Label Text="주문 시각"
-                           HorizontalOptions="Start"
-                           VerticalOptions="Start"/>
-                <Label Text="테이블 명"
-                           HorizontalOptions="End"
-                           VerticalOptions="Start"/>
+                <Label x:Name="tm"
+                       Text=""
+                       FontSize="Medium"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Start"/>
+                
+                <Entry Placeholder="ex) Table 1"
+                       HorizontalOptions="End"
+                       VerticalOptions="Start"
+                       Keyboard="Text"/>
+
+                <Label Text="클릭해주세요"
+                       TextColor="LightGray" />
+
                 <Label Text="주문 개수"
                            HorizontalOptions="Start"
                            VerticalOptions="End"/>
-                <Label Text="총 가격"
+                
+                <Label Text="{Binding MenuAllPrices}"
                            HorizontalOptions="End"
                            VerticalOptions="End"/>
+                
             </Grid>
 
-            <Grid VerticalOptions="FillAndExpand"
+            <!--<Grid VerticalOptions="FillAndExpand"
                   Margin="20,0,20,0">
                 <BoxView Color="Black"/>
                 <BoxView Color="White"
-                         Margin="15"/>
+                         Margin="5"/>
 
                 <Label Text="메뉴 명"
                        HorizontalOptions="Start"/>
@@ -45,46 +64,15 @@
                        FontSize="Medium"
                        Margin="0, 0, 50, 0"/>
                 <CheckBox HorizontalOptions="End"
-                          Margin="20" />
-            </Grid>
+                          Margin="10" />
+            </Grid>-->
 
-            <Grid VerticalOptions="FillAndExpand"
-                  Margin="20,0,20,0">
-                <BoxView Color="Black"/>
-                <BoxView Color="White"
-                         Margin="15"/>
-
-                <Label Text="메뉴 명"
-                       HorizontalOptions="Start"/>
-                <Label Text="서빙 완료"
-                       HorizontalOptions="End"
-                       FontSize="Medium"
-                       Margin="0, 0, 50, 0"/>
-                <CheckBox HorizontalOptions="End"
-                          Margin="20" />
-            </Grid>
-
-            <Grid VerticalOptions="FillAndExpand"
-                  Margin="20,0,20,0">
-                <BoxView Color="Black"/>
-                <BoxView Color="White"
-                         Margin="15"/>
-
-                <Label Text="메뉴 명"
-                       HorizontalOptions="Start"/>
-                <Label Text="서빙 완료"
-                       HorizontalOptions="End"
-                       FontSize="Medium"
-                       Margin="0, 0, 50, 0"/>
-                <CheckBox HorizontalOptions="End"
-                          Margin="20" />
-            </Grid>
-
-            <Grid VerticalOptions="Fill">
+            <Grid HorizontalOptions="Center"
+                  VerticalOptions="End">
                 <Button Text="결제 완료"
                         Margin="10"
                         Clicked="OnTwoSelectClicked"/>
             </Grid>
         </StackLayout>
-        </ContentPage.Content>
+    </ContentPage.Content>
 </ContentPage>
