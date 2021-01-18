@@ -2,44 +2,35 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:img ="clr-namespace:SimplePos.Resource;assembly=SimplePos"
              x:Class="SimplePos.View.B_SecondMenu.MenuSettingAddView"
-             xmlns:vm="clr-namespace:SimplePos.ViewModel.B_SecondMenu"
-             xmlns:menuList="clr-namespace:SimplePos.View.B_SecondMenu"
              x:Name="menuAddView">
-    <ContentPage.BindingContext>
-        <vm:MenuSettingAddViewModel/>
-    </ContentPage.BindingContext>
-    
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            Name="추가 완료"
+            Order="Primary"
+            IconImageSource="ToolbarPlusIcon.png" 
+            Clicked="OnComplete">
+        </ToolbarItem>
+
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
         <StackLayout>
-            <!-- Button Section
-                 뒤로가기, 확인 -->
-            <StackLayout Orientation="Horizontal">
-                <Button HorizontalOptions="StartAndExpand"
-                        Text="뒤로가기"
-                        Margin="5"
-                        HeightRequest="60"
-                        WidthRequest="120"/>
-                <Button HorizontalOptions="End"
-                        Text="확인"
-                        Margin="5"
-                        HeightRequest="60"
-                        WidthRequest="120"/>
-            </StackLayout>
             <!-- Main Section -->
             <StackLayout Margin="10"
                          HeightRequest="{Binding Source={x:Reference menuAddView}, 
                                                  Path=WidthRequest}"
                          WidthRequest="{Binding Source={x:Reference menuAddView}, 
                                                 Path=WidthRequest}">
-                <Image Source="{Binding MenuImage}"
+                <Image Source="{img:ImageResource SimplePos.Resource.ImageChange.png}"
                        HorizontalOptions="CenterAndExpand"
                        VerticalOptions="CenterAndExpand" />
                 <Button Text="눌러서 이미지 변경"
                         HorizontalOptions="Center"
                         BackgroundColor="White"
-                        TextColor="DeepPink"
-                        Clicked="{Binding ImageChange}">
+                        TextColor="DeepPink">
                 </Button>
             </StackLayout>
             <StackLayout>
@@ -52,6 +43,10 @@
                         <EntryCell Label="가격"
                                    Text="{Binding MenuPrice}"
                                    Placeholder="6000"
+                                   Keyboard="Numeric"/>
+                        <EntryCell Label="총 가격"
+                                   Text="{Binding MenuAllPrice}"
+                                   Placeholder="24000"
                                    Keyboard="Numeric"/>
                     </TableSection>
                 </TableView>

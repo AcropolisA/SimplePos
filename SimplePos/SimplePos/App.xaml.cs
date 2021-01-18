@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SimplePos.Model;
+using SimplePos.View.B_SecondMenu;
+using System;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;

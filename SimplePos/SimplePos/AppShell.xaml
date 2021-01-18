@@ -36,14 +36,14 @@
         <Tab Title="메인 메뉴" 
              Icon="MainMenuIcon.png">
         <ShellContent>
-                <views:FreeOrderView /> 
+                <views:GridOrderView />
         </ShellContent>
         </Tab>
         
         <Tab Title="메뉴 추가"
              Icon="MenuPlusIcon.png">
             <ShellContent>
-                <views1:MenuSettingListView />
+                <views1:MenuSettingAddView />
             </ShellContent>
         </Tab>
 

@@ -9,6 +9,12 @@
         <Style TargetType="BoxView">
             <Setter Property="Color" Value="White" />
         </Style>
+        <Style TargetType="Entry">
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            <Setter Property="VerticalTextAlignment" Value="Center"/>
+        </Style>
     </ContentPage.Resources>
 
     <Grid ColumnSpacing="1"
@@ -30,15 +36,17 @@
         <BoxView Grid.Row="0" Grid.Column="0">
             <BoxView.GestureRecognizers>
                 <TapGestureRecognizer Tapped="GoOrderListView"
-                                      NumberOfTapsRequired="1" />
+                                          NumberOfTapsRequired="1" />
             </BoxView.GestureRecognizers>
         </BoxView>
+
         <BoxView Grid.Row="0" Grid.Column="1">
             <BoxView.GestureRecognizers>
                 <TapGestureRecognizer Tapped="GoOrderListView"
                                       NumberOfTapsRequired="1" />
             </BoxView.GestureRecognizers>
         </BoxView>
+
         <BoxView Grid.Row="0" Grid.Column="2">
             <BoxView.GestureRecognizers>
                 <TapGestureRecognizer Tapped="GoOrderListView"
@@ -52,12 +60,14 @@
                                       NumberOfTapsRequired="1" />
             </BoxView.GestureRecognizers>
         </BoxView>
+
         <BoxView Grid.Row="1" Grid.Column="1">
             <BoxView.GestureRecognizers>
                 <TapGestureRecognizer Tapped="GoOrderListView"
                                       NumberOfTapsRequired="1" />
             </BoxView.GestureRecognizers>
         </BoxView>
+
         <BoxView Grid.Row="1" Grid.Column="2">
             <BoxView.GestureRecognizers>
                 <TapGestureRecognizer Tapped="GoOrderListView"
@@ -102,7 +112,5 @@
                                       NumberOfTapsRequired="1" />
             </BoxView.GestureRecognizers>
         </BoxView>
-
-
     </Grid>
 </ContentPage>

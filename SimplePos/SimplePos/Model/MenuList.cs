@@ -7,8 +7,8 @@ using System.Collections;
 
 namespace SimplePos.Model
 {
-    public class MenuList
+    public class MenuList : ObservableCollection<Menu>
     {
-
+         
     }
 }

@@ -1,42 +1,38 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="Current">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebugType>portable</DebugType>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
-
   <ItemGroup>
     <None Remove="ImageChange.png" />
   </ItemGroup>
-
   <ItemGroup>
-     <EmbeddedResource Include="Resource\ImageChange.png" />
+    <EmbeddedResource Include="Resource\ImageChange.png" />
   </ItemGroup>
-
   <ItemGroup>
     <Resource Include="Resource\ImageChange.png" />
   </ItemGroup>
-
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.1874" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.0" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.1874" />
   </ItemGroup>
-
   <ItemGroup>
     <Folder Include="Utility\" />
   </ItemGroup>
-
   <ItemGroup>
     <Compile Update="View\SimplePos.xaml.cs">
       <DependentUpon>SimplePos.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Update="AppShell.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -54,9 +50,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\A_FirstMenu\OrderListView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="View\B_SecondMenu\MenuListCell.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\B_SecondMenu\MenuSettingAddView.xaml">

@@ -3,11 +3,102 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SimplePos.View.C_ThridMenu.IncomeMasterView"
              Title="총 수입">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+
+    <StackLayout>
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="2.7*" />
+                <RowDefinition Height="1.2*" />
+                <RowDefinition Height="1.2*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid VerticalOptions="Start"
+                  Grid.Row="0">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="OnGoMonthlyViewTapped"
+                        NumberOfTapsRequired="1" />
+                </Grid.GestureRecognizers>
+
+                <BoxView Color="Black"/>
+                <BoxView Color="White"
+                         Margin="5"
+                         HeightRequest="200" />
+
+                <Label Text="이번 달 매출은 : ㅡㅡㅡㅡㅡㅡ 원 입니다."
+                       FontSize="Medium"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <BoxView Color="Black"/>
+                <BoxView Color="White"
+                         Margin="5"
+                         HeightRequest="200" />
+
+                <Label Text="DataPicker 놔두는 곳" />
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="OnGoDailyViewTapped"
+                        NumberOfTapsRequired="1" />
+                </Grid.GestureRecognizers>
+                <BoxView Color="Black"/>
+                <BoxView Color="White"
+                         Margin="5"
+                         HeightRequest="200" />
+
+                <Label Text="금일 매출"
+                       FontSize="Large"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Start"/>
+
+                <Label Text="날짜" 
+                       FontSize="Medium"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center"/>
+
+                <Label Text="총 매출" 
+                       FontSize="Medium"
+                       HorizontalOptions="End"
+                       VerticalOptions="Center"/>
+
+            </Grid>
+
+            <Grid Grid.Row="3">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="OnGoWeeklyViewTapped"
+                        NumberOfTapsRequired="1" />
+                </Grid.GestureRecognizers>
+                <BoxView Color="Black"></BoxView>
+                <BoxView Color="White"
+                         Margin="5"
+                         HeightRequest="200" />
+
+                <Label Text="주간 매출"
+                       FontSize="Large"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Start"/>
+
+                <Label Text="날짜" 
+                       FontSize="Medium"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center"/>
+
+                <Label Text="총 매출" 
+                       FontSize="Medium"
+                       HorizontalOptions="End"
+                       VerticalOptions="Center"/>
+            </Grid>
+        </Grid>
+    </StackLayout>
+
 </ContentPage>

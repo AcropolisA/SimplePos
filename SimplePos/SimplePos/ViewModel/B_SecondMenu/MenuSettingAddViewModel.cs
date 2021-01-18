@@ -1,25 +1,63 @@
-﻿using System;
+﻿using SimplePos.Model;
+using SimplePos.View.B_SecondMenu;
+using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 
 namespace SimplePos.ViewModel.B_SecondMenu
 {
     public class MenuSettingAddViewModel : ViewModelBase
     {
-        Uri imageSource = new Uri("Resource/ImageChange.png");
+        string imageSource = "Resource.ImageChange.png";
         string menuName;
         string menuPrice;
+        string menuAllPrice;
+
+        private MenuList menulist = Singletone<MenuList>.Get();
+        private Model.Menu menu;
+
 
         public MenuSettingAddViewModel()
         {
-            AddCommand = new Command(
-                execute: () =>
-                {
-                    // TODO
-                });
-            ImageChange = new Command(
+            CommandSet();
+        }
+
+        public void MenuSet(Model.Menu menu)
+        {
+            Menu = menu;
+
+            MenuPrice = menu.MenuPrice;
+            MenuName = menu.MenuName;
+        }
+
+
+        public void CommandSet()
+        {
+                CompleteCommand = new Command(
+                        execute: () =>
+                        {
+                            if (menu == null)
+                            {
+                                var _menu = new Model.Menu()
+                                {
+                                    MenuName = MenuName,
+                                    MenuPrice = MenuPrice
+                                };
+                                menulist.Add(_menu);
+                            }
+                            else
+                            {
+                                menu.MenuName = MenuName;
+                                menu.MenuPrice = MenuPrice;
+                                this.Menu = null;
+                            };
+                        });
+
+            ImageChangeCommand = new Command(
                 execute: () =>
                 {
                     // TODO
@@ -27,13 +65,15 @@ namespace SimplePos.ViewModel.B_SecondMenu
                 canExecute: () =>
                 {
                     return true;
-                });
+                }
+                );
         }
 
         #region Command
-        public ICommand AddCommand { private set; get; }
-        public ICommand ImageChange { private get; set; }
+        public ICommand CompleteCommand { private set; get; }
+        public ICommand ImageChangeCommand { private set; get; }
         #endregion
+
 
         #region BindableProperty
         public string MenuName
@@ -48,11 +88,13 @@ namespace SimplePos.ViewModel.B_SecondMenu
             set { SetProperty<string>(ref menuPrice, value); }
         }
 
-        public Uri ImageSource
+        public string ImageSource
         {
             get { return imageSource; }
-            set { SetProperty<Uri>(ref imageSource, value); }
+            set { SetProperty<string>(ref imageSource, value); }
         }
+
+        public Model.Menu Menu { get => menu; set => menu = value; }
         #endregion
     }
 }

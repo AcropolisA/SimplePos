@@ -9,7 +9,7 @@ namespace SimplePos.Model
         static readonly object ThreadLock = new object();
         static private T instance;
 
-        public static T GetInstance()
+        public static T Get()
         {
             lock (ThreadLock)
             {

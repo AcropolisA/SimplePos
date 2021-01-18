@@ -2,11 +2,34 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SimplePos.View.C_ThridMenu.IncomeWeeklyView">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    <StackLayout>
+        <Grid>
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer
+                        Tapped="OnGoDailyViewTapped"
+                        NumberOfTapsRequired="1" />
+            </Grid.GestureRecognizers>
+
+            <BoxView Color="Black"></BoxView>
+            <BoxView Color="White"
+                         Margin="5"
+                         HeightRequest="70" />
+
+            <Label Text="테이블 명"
+                       FontSize="Large"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+
+            <Label Text="날짜" 
+                       FontSize="Large"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center"/>
+
+            <Label Text="총 매출" 
+                       FontSize="Large"
+                       HorizontalOptions="End"
+                       VerticalOptions="Center"/>
+
+        </Grid>
+    </StackLayout>
 </ContentPage>

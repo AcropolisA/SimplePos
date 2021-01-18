@@ -3,11 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SimplePos.View.D_ForthMenu.SettingView"
              Title="설정">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+
+    <StackLayout>
+        <Label Text="바꾸고싶은 뷰 형태를 골라주세요" />
+        <RadioButton Content="자유 배치 형태"
+                     x:Name="free"
+                     Value="freeOrderView"
+                     CheckedChanged="RadioButton_CheckedChanged"/>
+        <RadioButton Content="그리드 형태"
+                     Value="gridOrderView"
+                     CheckedChanged="RadioButton_CheckedChanged"/>
+        <RadioButton Content="리스트 뷰 형태"
+                     Value="listOrderView"
+                     CheckedChanged="RadioButton_CheckedChanged"/>
+    </StackLayout>
+
 </ContentPage>
