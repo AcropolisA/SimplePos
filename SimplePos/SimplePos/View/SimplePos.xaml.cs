@@ -28,7 +28,6 @@ namespace SimplePos
            {
                await Navigation.PushModalAsync(new MenuSettingAddView(), true);
            };
-
 #endif
         }
     }
