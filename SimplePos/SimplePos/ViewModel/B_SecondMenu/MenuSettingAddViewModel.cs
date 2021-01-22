@@ -15,7 +15,6 @@ namespace SimplePos.ViewModel.B_SecondMenu
         string imageSource = "Resource.ImageChange.png";
         string menuName;
         string menuPrice;
-        string menuAllPrice;
 
         private MenuList menulist = Singletone<MenuList>.Get();
         private Model.Menu menu;
@@ -40,6 +39,7 @@ namespace SimplePos.ViewModel.B_SecondMenu
                 CompleteCommand = new Command(
                         execute: () =>
                         {
+                            // 메뉴 추가
                             if (menu == null)
                             {
                                 var _menu = new Model.Menu()
@@ -49,6 +49,7 @@ namespace SimplePos.ViewModel.B_SecondMenu
                                 };
                                 menulist.Add(_menu);
                             }
+                            // 메뉴 수정
                             else
                             {
                                 menu.MenuName = MenuName;
