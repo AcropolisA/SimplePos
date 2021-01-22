@@ -6,7 +6,7 @@
              x:Class="SimplePos.View.B_SecondMenu.MenuSettingListView"             
              xmlns:local="clr-namespace:SimplePos.Resource;assembly=SimplePos"
              x:Name="menuSettingListView"
-            Title="메뉴 추가">
+             Title="메뉴 추가">
     
     <ContentPage.ToolbarItems>
         <ToolbarItem 
@@ -19,7 +19,6 @@
                             Android="launcher_foreground.png"/>
             </ToolbarItem.Icon>
         </ToolbarItem>
-        
     </ContentPage.ToolbarItems>
 
 
