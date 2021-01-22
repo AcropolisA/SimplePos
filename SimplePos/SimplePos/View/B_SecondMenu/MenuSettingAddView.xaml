@@ -44,10 +44,6 @@
                                    Text="{Binding MenuPrice}"
                                    Placeholder="6000"
                                    Keyboard="Numeric"/>
-                        <EntryCell Label="총 가격"
-                                   Text="{Binding MenuAllPrice}"
-                                   Placeholder="24000"
-                                   Keyboard="Numeric"/>
                     </TableSection>
                 </TableView>
             </StackLayout>

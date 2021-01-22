@@ -29,14 +29,9 @@
 
                 <Label x:Name="tm"
                        Text=""
-                       FontSize="Medium"
-                       HorizontalOptions="Start"
+                       FontSize="Large"
+                       HorizontalOptions="Center"
                        VerticalOptions="Start"/>
-                
-                <Entry Placeholder="ex) Table 1"
-                       HorizontalOptions="End"
-                       VerticalOptions="Start"
-                       Keyboard="Text"/>
 
                 <Label Text="클릭해주세요"
                        TextColor="LightGray" />
@@ -45,7 +40,7 @@
                            HorizontalOptions="Start"
                            VerticalOptions="End"/>
                 
-                <Label Text="{Binding MenuAllPrices}"
+                <Label Text="총 가격"
                            HorizontalOptions="End"
                            VerticalOptions="End"/>
                 

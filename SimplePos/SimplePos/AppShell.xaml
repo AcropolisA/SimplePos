@@ -43,7 +43,7 @@
         <Tab Title="메뉴 추가"
              Icon="MenuPlusIcon.png">
             <ShellContent>
-                <views1:MenuSettingAddView />
+                <views1:MenuSettingListView />
             </ShellContent>
         </Tab>
 

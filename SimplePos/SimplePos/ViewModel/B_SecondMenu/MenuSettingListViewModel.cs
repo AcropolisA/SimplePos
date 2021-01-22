@@ -25,32 +25,6 @@ namespace SimplePos.ViewModel.B_SecondMenu
         {
             Task.Run(() =>
             {
-                Menulist.Add(new Model.Menu()
-                {
-                    MenuName="국밥",
-                    MenuPrice="7000"
-                });
-
-                Menulist.Add(new Model.Menu()
-                {
-                    MenuName = "김밥",
-                    MenuPrice = "3000"
-                });
-                Menulist.Add(new Model.Menu()
-                {
-                    MenuName = "라면",
-                    MenuPrice = "2000"
-                });
-                Menulist.Add(new Model.Menu()
-                {
-                    MenuName = "돈까스",
-                    MenuPrice = "6500"
-                });
-
-                foreach(Model.Menu item in Menulist)
-                {
-                    Console.WriteLine(item);
-                }
             });
         }
 
