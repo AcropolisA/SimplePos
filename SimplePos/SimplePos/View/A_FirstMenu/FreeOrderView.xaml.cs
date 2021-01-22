@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using SimplePos.Model;
 
 namespace SimplePos.View.A_FirstMenu
 {

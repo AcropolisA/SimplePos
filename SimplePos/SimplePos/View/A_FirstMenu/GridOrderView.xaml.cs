@@ -23,12 +23,15 @@ namespace SimplePos.View.A_FirstMenu
 
             tapCount++;
             // watch the monkey go from color to black&white!
-            if (tapCount >= 1)
+            if (tapCount == 1)
             {
                 boxview.Color = Color.Blue;
                 await Navigation.PushAsync(new OrderListView());
             }
-            else { }
+            else if (boxview.Color == Color.Blue && tapCount == 1)
+            {
+                boxview.Color = Color.White;
+            }
         }
     }
 }
