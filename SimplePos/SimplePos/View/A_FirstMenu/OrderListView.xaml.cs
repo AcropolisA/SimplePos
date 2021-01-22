@@ -14,11 +14,10 @@ namespace SimplePos.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class OrderListView : ContentPage
     {
-
         public OrderListView()
         {
             InitializeComponent();
-            tm.Text = DateTime.Now.ToString("MM/dd hh:mm:ss");
+            tm.Text = DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss");
         }
         async void OnTwoSelectClicked(object sender, EventArgs e)
         {
@@ -37,16 +36,7 @@ namespace SimplePos.View
         }
         void OnGoMenuListTapped(object sender, EventArgs args)
         {
-            int tapCount = 0;
-
-            tapCount++;
-
-            // watch the monkey go from color to black&white!
-            if (tapCount >= 1)
-            {
-                Navigation.PushAsync(new MenuListView());
-            }
-            else { }
+            Navigation.PushAsync(new MenuListView());
         }
     }
 }

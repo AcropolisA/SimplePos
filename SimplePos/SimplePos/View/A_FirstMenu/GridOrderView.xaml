@@ -39,6 +39,7 @@
                                           NumberOfTapsRequired="1" />
             </BoxView.GestureRecognizers>
         </BoxView>
+        <Label Text="Table 1" Grid.Row="0" Grid.Column="0"/>
 
         <BoxView Grid.Row="0" Grid.Column="1">
             <BoxView.GestureRecognizers>
@@ -46,6 +47,7 @@
                                       NumberOfTapsRequired="1" />
             </BoxView.GestureRecognizers>
         </BoxView>
+        <Label Text="Table 2" Grid.Row="0" Grid.Column="1"/>
 
         <BoxView Grid.Row="0" Grid.Column="2">
             <BoxView.GestureRecognizers>
@@ -53,6 +55,7 @@
                                       NumberOfTapsRequired="1" />
             </BoxView.GestureRecognizers>
         </BoxView>
+        <Label Text="Table 3" Grid.Row="0" Grid.Column="2"/>
 
         <BoxView Grid.Row="1" Grid.Column="0">
             <BoxView.GestureRecognizers>
@@ -60,6 +63,7 @@
                                       NumberOfTapsRequired="1" />
             </BoxView.GestureRecognizers>
         </BoxView>
+        <Label Text="Table 4" Grid.Row="1" Grid.Column="0"/>
 
         <BoxView Grid.Row="1" Grid.Column="1">
             <BoxView.GestureRecognizers>
@@ -67,6 +71,7 @@
                                       NumberOfTapsRequired="1" />
             </BoxView.GestureRecognizers>
         </BoxView>
+        <Label Text="Table 5" Grid.Row="1" Grid.Column="1"/>
 
         <BoxView Grid.Row="1" Grid.Column="2">
             <BoxView.GestureRecognizers>
@@ -74,6 +79,7 @@
                                       NumberOfTapsRequired="1" />
             </BoxView.GestureRecognizers>
         </BoxView>
+        <Label Text="Table 6" Grid.Row="1" Grid.Column="2"/>
 
         <BoxView Grid.Row="2" Grid.Column="0">
             <BoxView.GestureRecognizers>
@@ -81,18 +87,23 @@
                                       NumberOfTapsRequired="1" />
             </BoxView.GestureRecognizers>
         </BoxView>
+        <Label Text="Table 7" Grid.Row="2" Grid.Column="0"/>
+
         <BoxView Grid.Row="2" Grid.Column="1">
             <BoxView.GestureRecognizers>
                 <TapGestureRecognizer Tapped="GoOrderListView"
                                       NumberOfTapsRequired="1" />
             </BoxView.GestureRecognizers>
         </BoxView>
+        <Label Text="Table 8" Grid.Row="2" Grid.Column="1"/>
+
         <BoxView Grid.Row="2" Grid.Column="2">
             <BoxView.GestureRecognizers>
                 <TapGestureRecognizer Tapped="GoOrderListView"
                                       NumberOfTapsRequired="1" />
             </BoxView.GestureRecognizers>
         </BoxView>
+        <Label Text="Table 9" Grid.Row="2" Grid.Column="2"/>
 
         <BoxView Grid.Row="3" Grid.Column="0">
             <BoxView.GestureRecognizers>
@@ -100,17 +111,22 @@
                                       NumberOfTapsRequired="1" />
             </BoxView.GestureRecognizers>
         </BoxView>
+        <Label Text="Table 10" Grid.Row="3" Grid.Column="0"/>
+        
         <BoxView Grid.Row="3" Grid.Column="1">
             <BoxView.GestureRecognizers>
                 <TapGestureRecognizer Tapped="GoOrderListView"
                                       NumberOfTapsRequired="1" />
             </BoxView.GestureRecognizers>
         </BoxView>
+        <Label Text="Table 11" Grid.Row="3" Grid.Column="1"/>
+        
         <BoxView Grid.Row="3" Grid.Column="2">
             <BoxView.GestureRecognizers>
                 <TapGestureRecognizer Tapped="GoOrderListView"
                                       NumberOfTapsRequired="1" />
             </BoxView.GestureRecognizers>
         </BoxView>
+        <Label Text="Table 12" Grid.Row="3" Grid.Column="2"/>
     </Grid>
 </ContentPage>
