@@ -33,15 +33,17 @@
                         TextColor="DeepPink">
                 </Button>
             </StackLayout>
-            <StackLayout>
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
                 <TableView>
                     <TableSection Title="메뉴 설정">
                         <EntryCell Label="메뉴명"
                                    Text="{Binding MenuName}"
+                                   HorizontalTextAlignment="Center"
                                    Placeholder="국밥"
-                                   Keyboard="Text"/>
+                                   Keyboard="Text" />
                         <EntryCell Label="가격"
                                    Text="{Binding MenuPrice}"
+                                   HorizontalTextAlignment="Center"
                                    Placeholder="6000"
                                    Keyboard="Numeric"/>
                     </TableSection>

@@ -39,6 +39,7 @@ namespace SimplePos.ViewModel.B_SecondMenu
                 CompleteCommand = new Command(
                         execute: () =>
                         {
+                            // 메뉴 추가
                             if (menu == null)
                             {
                                 var _menu = new Model.Menu()
@@ -48,6 +49,7 @@ namespace SimplePos.ViewModel.B_SecondMenu
                                 };
                                 menulist.Add(_menu);
                             }
+                            // 메뉴 수정
                             else
                             {
                                 menu.MenuName = MenuName;

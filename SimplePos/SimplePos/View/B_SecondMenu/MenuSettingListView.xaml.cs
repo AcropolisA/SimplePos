@@ -17,13 +17,15 @@ namespace SimplePos.View.B_SecondMenu
         // viewmodel
         MenuSettingListViewModel vm = new MenuSettingListViewModel();
 
-        // view
+        object orderList = new object();
+
+        // Add View
         MenuSettingAddView addView = new MenuSettingAddView();
 
         public MenuSettingListView()
         {
             InitializeComponent();
-            this.BindingContext = vm;
+            BindingContext = vm;
             Console.WriteLine(BindingContext.ToString());
         }
         
@@ -34,8 +36,12 @@ namespace SimplePos.View.B_SecondMenu
 
         async void ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            if (e.SelectedItem is Model.Menu) {
+            if (e.SelectedItem is Model.Menu) 
+            {
+                // Throught instance.
                 addView.ItemSelected((Model.Menu)e.SelectedItem);
+
+                // Add View load
                 await Navigation.PushAsync(addView);
             }
         }
