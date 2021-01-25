@@ -6,7 +6,8 @@ using SimplePos.Model;
 
 namespace SimplePos.ViewModel.A_FirstMenu
 {
-    class OrderListViewModel
+    // VM for GridView, ListView, FreeView 
+    public class OrderListViewModel
     {
 
     }

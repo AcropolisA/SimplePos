@@ -47,7 +47,7 @@
 
                                     <!-- 메뉴 갯수를 위한 Steeper -->
                                     <StackLayout Grid.Row="1" Grid.Column="5" Grid.ColumnSpan="5" HorizontalOptions="End" VerticalOptions="End" Padding="0">
-                                        <Stepper x:Name="_steeper" Maximum="20" Increment="1"/>
+                                        <Stepper x:Name="_steeper" Maximum="20" Increment="1" Value="{Binding MenuCount}"/>
                                     </StackLayout>
                                 </Grid>
                             </Frame>

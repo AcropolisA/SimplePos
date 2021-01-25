@@ -1,6 +1,7 @@
 ﻿using SimplePos.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace SimplePos.Model
@@ -10,33 +11,27 @@ namespace SimplePos.Model
         string imageSource;
         string menuName;
         string menuPrice;
+        ulong menuPriceInt = 0;
         uint menuCount = 0;
 
-        public string ImageSource 
-        { 
-            get { return imageSource; } 
-            set { SetProperty<string>(ref imageSource, value); } 
-        }
-        public string MenuName 
-        {
-            set { SetProperty<string>(ref menuName, value); }
-            get { return menuName; } 
-        }
-        public string MenuPrice 
-        { 
-            set { SetProperty<string>(ref menuPrice, value); }
-            get { return menuPrice; }  
-        }
+        public string ImageSource { set { SetProperty<string>(ref imageSource, value); } get => imageSource; }
+        public string MenuName { set { SetProperty<string>(ref menuName, value); } get => menuName; }
+        public ulong MenuPriceInt { get => menuPriceInt; }
+        public string MenuPrice { set { SetProperty<string>(ref menuPrice, value); menuPriceInt=ulong.Parse(value); } get => menuPrice; }
+        public uint MenuCount { set { SetProperty<uint>(ref menuCount, value); } get => menuCount; }
 
-        public uint MenuCount
-        {
-            set { SetProperty<uint>(ref menuCount, value); }
-            get { return menuCount; }
-        }
+        public override string ToString() => String.Format("Menu : {0}, Price : {1}", MenuName, MenuPrice);
+        
+    }
 
-        public override string ToString()
+    public class MenuList : ObservableCollection<Menu>
+    {
+#if DEBUG
+        public new void Add(Menu t)
         {
-            return String.Format("Menu : {0}, Price : {1}", MenuName, MenuPrice);
+            this.Add(t);
+            Console.WriteLine("Menu 등록됨 : {0}, {1}, {2}", t.ImageSource ,t.MenuName, t.MenuPrice);
         }
+#endif
     }
 }

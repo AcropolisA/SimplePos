@@ -16,10 +16,12 @@
             <Setter Property="VerticalTextAlignment" Value="Center"/>
         </Style>
     </ContentPage.Resources>
-
+    
+    
     <Grid ColumnSpacing="1"
           RowSpacing="1"
           BackgroundColor="Black">
+        
 
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
