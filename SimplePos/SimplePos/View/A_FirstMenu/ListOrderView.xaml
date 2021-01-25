@@ -17,8 +17,8 @@
                     Android="10, 0"
                     WinPhone="10, 0" />
     </ContentPage.Padding>
-    
-    <ListView 
+
+    <ListView ItemsSource="{x:Static toolkit:NamedColor.All}"
               HasUnevenRows="True">
         <ListView.RowHeight>
             <OnPlatform x:TypeArguments="x:Int32"
