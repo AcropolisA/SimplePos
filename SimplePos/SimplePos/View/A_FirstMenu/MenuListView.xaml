@@ -28,7 +28,7 @@
                             <Frame Padding="0" Margin="5" OutlineColor="#40B0FF">
                                 <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="55"/>
+                                        <RowDefinition Height="55"/> 
                                         <RowDefinition Height="55"/>
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
