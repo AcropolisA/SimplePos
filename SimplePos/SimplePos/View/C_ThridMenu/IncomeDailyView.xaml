@@ -1,36 +1,52 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SimplePos.View.C_ThridMenu.IncomeDailyView">
+             x:Class="SimplePos.View.C_ThridMenu.IncomeDailyView"
+             xmlns:toolkit="clr-namespace:SimplePos.Model"
+             Title="일간 매출">
 
-    <StackLayout>
-        <Grid>
-            <Grid.GestureRecognizers>
-                <TapGestureRecognizer
-                        Tapped="OnGoOrderListViewTapped"
-                        NumberOfTapsRequired="1" />
-            </Grid.GestureRecognizers>
-            
-            <BoxView Color="Black"></BoxView>
-            <BoxView Color="White"
-                         Margin="5"
-                         HeightRequest="70" />
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="10, 20, 10, 0"
+                    Android="10, 0"
+                    WinPhone="10, 0" />
+    </ContentPage.Padding>
 
-            <Label Text="테이블 명"
-                       FontSize="Large"
-                       HorizontalOptions="Center"
-                       VerticalOptions="Center"/>
-
-            <Label Text="시간" 
-                       FontSize="Large"
-                       HorizontalOptions="Start"
-                       VerticalOptions="Center"/>
-
-            <Label Text="총 가격" 
-                       FontSize="Large"
-                       HorizontalOptions="End"
-                       VerticalOptions="Center"/>
-        </Grid>
-    </StackLayout>
-
+    <ListView ItemsSource="{x:Static toolkit:NamedColor.All}"
+              HasUnevenRows="False"
+              SeparatorVisibility="None">
+        <ListView.RowHeight>
+            <OnPlatform x:TypeArguments="x:Int32"
+                        iOS="80"
+                        Android="80" />
+        </ListView.RowHeight>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ContentView Padding="5">
+                        <Frame>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Tapped="OnGoOrderListViewTapped"
+                                    NumberOfTapsRequired="1" />
+                            </Frame.GestureRecognizers>
+                            <Grid>
+                                <!-- 첫번째 인수 -->
+                                <Label Text="{Binding Period}" 
+                                       HorizontalOptions="Start"/>
+                                
+                                <!-- 두번째 인수 -->
+                                <Label Text="{Binding Period}" 
+                                       HorizontalOptions="Center"/>
+                                
+                                <!-- 세번째 인수 -->
+                                <Label Text="{Binding MonthAllPrices, StringFormat='RGB = {0}'}"
+                                       HorizontalOptions="End"/>
+                            </Grid>
+                        </Frame>
+                    </ContentView>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </ContentPage>

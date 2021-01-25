@@ -26,7 +26,8 @@
                                                 Path=WidthRequest}">
                 <Image Source="{img:ImageResource SimplePos.Resource.ImageChange.png}"
                        HorizontalOptions="CenterAndExpand"
-                       VerticalOptions="CenterAndExpand" />
+                       VerticalOptions="CenterAndExpand"
+                       Aspect="AspectFill"/>
                 <Button Text="눌러서 이미지 변경"
                         HorizontalOptions="Center"
                         BackgroundColor="White"
@@ -34,17 +35,16 @@
                 </Button>
             </StackLayout>
             <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                <TableView>
+                <TableView Margin="15" >
                     <TableSection Title="메뉴 설정">
                         <EntryCell Label="메뉴명"
                                    Text="{Binding MenuName}"
-                                   HorizontalTextAlignment="Center"
-                                   Placeholder="국밥"
+                                   Placeholder=" 국밥"
                                    Keyboard="Text" />
-                        <EntryCell Label="가격"
+                        <EntryCell Label="가격(원)"
                                    Text="{Binding MenuPrice}"
                                    HorizontalTextAlignment="Center"
-                                   Placeholder="6000"
+                                   Placeholder=" 6000"
                                    Keyboard="Numeric"/>
                     </TableSection>
                 </TableView>

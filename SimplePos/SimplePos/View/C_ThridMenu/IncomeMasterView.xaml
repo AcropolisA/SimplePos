@@ -2,101 +2,69 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SimplePos.View.C_ThridMenu.IncomeMasterView"
-             Title="총 수입">
+             Title="총 수입" >
 
     <StackLayout>
-        <Grid Margin="10">
+        <Grid>
+            <!-- 그리드 크기 -->
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
-                <RowDefinition Height="2.7*" />
-                <RowDefinition Height="1.2*" />
-                <RowDefinition Height="1.2*" />
+                <RowDefinition Height="3*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Grid VerticalOptions="Start"
-                  Grid.Row="0">
-                <Grid.GestureRecognizers>
+            <!-- 월간매출 디자인 -->
+            <Frame Grid.Row="0" Grid.Column="0">
+                <Frame.GestureRecognizers>
                     <TapGestureRecognizer
                         Tapped="OnGoMonthlyViewTapped"
                         NumberOfTapsRequired="1" />
-                </Grid.GestureRecognizers>
+                </Frame.GestureRecognizers>
+                <Grid>
+                    <StackLayout Orientation="Vertical" Margin="8">
+                        <Image Source="MonthMoney.png" />
+                        <Label Text="월간 매출"/>
+                    </StackLayout>
+                </Grid>
+            </Frame>
 
-                <BoxView Color="Black"/>
-                <BoxView Color="White"
-                         Margin="5"
-                         HeightRequest="200" />
-
-                <Label Text="이번 달 매출은 : ㅡㅡㅡㅡㅡㅡ 원 입니다."
-                       FontSize="Medium"
-                           HorizontalOptions="Center"
-                           VerticalOptions="Center"/>
-            </Grid>
-
-            <Grid Grid.Row="1">
-                <BoxView Color="Black"/>
-                <BoxView Color="White"
-                         Margin="5"
-                         HeightRequest="200" />
-
-                <Label Text="DataPicker 놔두는 곳" />
-            </Grid>
-
-            <Grid Grid.Row="2">
-                <Grid.GestureRecognizers>
-                    <TapGestureRecognizer
-                        Tapped="OnGoDailyViewTapped"
-                        NumberOfTapsRequired="1" />
-                </Grid.GestureRecognizers>
-                <BoxView Color="Black"/>
-                <BoxView Color="White"
-                         Margin="5"
-                         HeightRequest="200" />
-
-                <Label Text="금일 매출"
-                       FontSize="Large"
-                       HorizontalOptions="Center"
-                       VerticalOptions="Start"/>
-
-                <Label Text="날짜" 
-                       FontSize="Medium"
-                       HorizontalOptions="Start"
-                       VerticalOptions="Center"/>
-
-                <Label Text="총 매출" 
-                       FontSize="Medium"
-                       HorizontalOptions="End"
-                       VerticalOptions="Center"/>
-
-            </Grid>
-
-            <Grid Grid.Row="3">
-                <Grid.GestureRecognizers>
+            <!-- 주간 매출 디자인 -->
+            <Frame Grid.Row="0" Grid.Column="1">
+                <Frame.GestureRecognizers>
                     <TapGestureRecognizer
                         Tapped="OnGoWeeklyViewTapped"
                         NumberOfTapsRequired="1" />
-                </Grid.GestureRecognizers>
-                <BoxView Color="Black"></BoxView>
-                <BoxView Color="White"
-                         Margin="5"
-                         HeightRequest="200" />
+                </Frame.GestureRecognizers>
+                <Grid>
+                    <StackLayout Orientation="Vertical" Margin="8">
+                        <Image Source="WeeklyMoney.png" />
+                        <Label Text="주간 매출"/>
+                    </StackLayout>
+                </Grid>
+            </Frame>
 
-                <Label Text="주간 매출"
-                       FontSize="Large"
-                       HorizontalOptions="Center"
-                       VerticalOptions="Start"/>
+            <!-- 일간 매출 디자인 -->
+            <Frame Grid.Row="0" Grid.Column="2">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Tapped="OnGoDailyViewTapped"
+                        NumberOfTapsRequired="1" />
+                </Frame.GestureRecognizers>
 
-                <Label Text="날짜" 
-                       FontSize="Medium"
-                       HorizontalOptions="Start"
-                       VerticalOptions="Center"/>
+                <StackLayout Orientation="Vertical" Margin="8">
+                    <Image Source="DailyMoney.png" />
+                    <Label Text="일간 매출"/>
+                </StackLayout>
+            </Frame>
 
-                <Label Text="총 매출" 
-                       FontSize="Medium"
-                       HorizontalOptions="End"
-                       VerticalOptions="Center"/>
+            <!-- 달력 부분 디자인 -->
+            <Grid Grid.Row="1" Grid.ColumnSpan="3">
+                <Image Source="datepicker.png"
+                           Aspect="AspectFill"/>
             </Grid>
         </Grid>
     </StackLayout>

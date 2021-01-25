@@ -40,15 +40,15 @@
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
                                     
-                                    <StackLayout Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center">
+                                    <StackLayout Grid.Column="0">
                                         <Image Margin="0"></Image>
                                     </StackLayout>
                                     
-                                    <StackLayout Grid.Column="2" Grid.ColumnSpan="3" HorizontalOptions="StartAndExpand" VerticalOptions="Center" Padding="0">
+                                    <StackLayout Grid.Column="2" Grid.ColumnSpan="3" HorizontalOptions="StartAndExpand" Padding="0">
                                         <Label Text="{Binding MenuName}" LineBreakMode="NoWrap" Padding="0" Margin="15"/>
                                     </StackLayout>
                                     
-                                    <StackLayout Grid.Column="4" Grid.ColumnSpan="5" HorizontalOptions="End" VerticalOptions="Center" Padding="0">
+                                    <StackLayout Grid.Column="4" Grid.ColumnSpan="5" HorizontalOptions="End" Padding="0">
                                         <Label Text="{Binding MenuPrice}" LineBreakMode="NoWrap" Padding="0" Margin="15"/>
                                     </StackLayout>
                                 </Grid>

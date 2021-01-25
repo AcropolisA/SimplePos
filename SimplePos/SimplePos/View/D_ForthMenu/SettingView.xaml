@@ -2,20 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SimplePos.View.D_ForthMenu.SettingView"
+             xmlns:toolkit="clr-namespace:SimplePos.Model"
              Title="설정">
 
-    <StackLayout>
-        <Label Text="바꾸고싶은 뷰 형태를 골라주세요" />
-        <RadioButton Content="자유 배치 형태"
-                     x:Name="free"
-                     Value="freeOrderView"
-                     CheckedChanged="RadioButton_CheckedChanged"/>
-        <RadioButton Content="그리드 형태"
-                     Value="gridOrderView"
-                     CheckedChanged="RadioButton_CheckedChanged"/>
-        <RadioButton Content="리스트 뷰 형태"
-                     Value="listOrderView"
-                     CheckedChanged="RadioButton_CheckedChanged"/>
-    </StackLayout>
-
+    <ContentPage.Content>
+        <ListView x:Name ="lstView" IsGroupingEnabled="true" GroupDisplayBinding="{Binding LongName}" GroupShortNameBinding="{Binding ShortName}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}" Detail = "{Binding Comment}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+    
 </ContentPage>

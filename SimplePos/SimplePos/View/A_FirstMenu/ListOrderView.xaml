@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SimplePos.View.A_FirstMenu.ListOrderView"
              xmlns:toolkit="clr-namespace:SimplePos.Model"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              Title="메인 메뉴">
 
     <ContentPage.ToolbarItems>
@@ -28,20 +29,14 @@
             <DataTemplate>
                 <ViewCell>
                     <ContentView Padding="5">
-                        <Frame OutlineColor="Black"
+                        <Frame OutlineColor="LightBlue"
                                Padding="1">
-                            <StackLayout Orientation="Vertical">
-                                <BoxView x:Name="boxView"
-                                         Color="{Binding Color}"
-                                         WidthRequest="30"
-                                         HeightRequest="30" />
-                                <Label Text="{Binding FriendlyName}"
-                                           FontSize="Large"
-                                           VerticalOptions="Start"
-                                           HorizontalOptions="Center"/>
-                                <Label Text="{Binding RgbDisplay, StringFormat='RGB = {0}'}"
-                                           FontSize="Medium"
-                                           VerticalOptions="Center" />
+                            <StackLayout Orientation="Vertical" Margin="10">
+                                <Label Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat='{} {0:yyyy-MM-dd HH:mm:ss}', Mode=OneWay}"
+                                       VerticalOptions="Start"/>
+                                <Label Text="{Binding Period}"
+                                       VerticalOptions="Start"/>
+                                <Label Text="{Binding MonthAllPrices, StringFormat='RGB = {0}'}" />
                             </StackLayout>
                         </Frame>
                         <ContentView.GestureRecognizers>
