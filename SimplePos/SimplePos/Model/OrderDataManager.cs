@@ -22,24 +22,24 @@ namespace SimplePos.Model
 #if DEBUG
         public void MakeExample()
         {
-            Task.Run(() =>
-            {
-                Menulist.Add(new Model.Menu()
-                {
-                    MenuName = "국밥",
-                    MenuPrice = "7000"
-                });
-                Menulist.Add(new Model.Menu()
-                {
-                    MenuName = "라면",
-                    MenuPrice = "5000"
-                });
-                Menulist.Add(new Model.Menu()
-                {
-                    MenuName = "돈가스덮밥",
-                    MenuPrice = "8500"
-                });
-            });
+            //Task.Run(() =>
+            //{
+            //    Menulist.Add(new Model.Menu()
+            //    {
+            //        MenuName = "국밥",
+            //        MenuPrice = "7000"
+            //    });
+            //    Menulist.Add(new Model.Menu()
+            //    {
+            //        MenuName = "라면",
+            //        MenuPrice = "5000"
+            //    });
+            //    Menulist.Add(new Model.Menu()
+            //    {
+            //        MenuName = "돈가스덮밥",
+            //        MenuPrice = "8500"
+            //    });
+            //});
         }
 #endif 
     }
