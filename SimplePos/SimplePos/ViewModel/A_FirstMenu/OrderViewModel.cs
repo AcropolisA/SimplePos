@@ -16,7 +16,6 @@ namespace SimplePos.ViewModel.A_FirstMenu
 {
     class OrderViewModel : ViewModelBase
     {
-        int taps = 0;
         ICommand tapCommand;
         public OrderViewModel()
         {
@@ -31,7 +30,10 @@ namespace SimplePos.ViewModel.A_FirstMenu
 
         void OnTapped(object s)
         {
+            int taps = 0;
+
             taps++;
+
             Debug.WriteLine("parameter: " + s);
         }
     }
