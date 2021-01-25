@@ -12,6 +12,7 @@ namespace SimplePos
         public App()
         {
             InitializeComponent();
+            Singletone<OrderDataManager>.Get();
             MainPage = new AppShell();
         }
 

@@ -12,6 +12,8 @@ namespace SimplePos.View.C_ThridMenu
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class IncomeMasterView : ContentPage
     {
+        IncomMasterViewModel vm = new IncomMasterViewModel();
+
         public IncomeMasterView()
         {
             InitializeComponent();
