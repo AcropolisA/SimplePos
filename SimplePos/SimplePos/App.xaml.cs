@@ -12,8 +12,9 @@ namespace SimplePos
         public App()
         {
             InitializeComponent();
-            Singletone<OrderDataManager>.Get();
             MainPage = new AppShell();
+
+            Singletone<OrderDataManager>.Get();
         }
 
         protected override void OnStart()
