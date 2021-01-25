@@ -16,7 +16,7 @@ namespace SimplePos.ViewModel.B_SecondMenu
         string menuName;
         string menuPrice;
 
-        private MenuList menulist = Singletone<MenuList>.Get();
+        private MenuList menulist = Singletone<OrderDataManager>.Get().Menulist;
         private Model.Menu menu;
 
 
@@ -32,7 +32,6 @@ namespace SimplePos.ViewModel.B_SecondMenu
             MenuPrice = menu.MenuPrice;
             MenuName = menu.MenuName;
         }
-
 
         public void CommandSet()
         {

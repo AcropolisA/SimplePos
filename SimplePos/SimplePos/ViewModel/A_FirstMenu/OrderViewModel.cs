@@ -14,7 +14,7 @@ using Xamarin.Forms;
  */
 namespace SimplePos.ViewModel.A_FirstMenu
 {
-    class OrderViewModel : INotifyPropertyChanged
+    class OrderViewModel : ViewModelBase
     {
         int taps = 0;
         ICommand tapCommand;
@@ -28,7 +28,6 @@ namespace SimplePos.ViewModel.A_FirstMenu
             get { return tapCommand; }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
         void OnTapped(object s)
         {

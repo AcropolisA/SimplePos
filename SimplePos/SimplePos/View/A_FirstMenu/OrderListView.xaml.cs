@@ -1,4 +1,4 @@
-﻿using SimplePos.View.A_FirstMenu;
+using SimplePos.View.A_FirstMenu;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
