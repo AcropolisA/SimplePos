@@ -6,13 +6,13 @@ using Xamarin.Forms;
 
 namespace SimplePos.Model
 {
+    //편의를 위해 모델 뷰모델 같이 넣어놈
     public class NamedColor
     {
         public string Name { private set; get; }
-        public string FriendlyName { private set; get; }
+        public string Period { private set; get; }
         public Color Color { private set; get; }
-        public string RgbDisplay { private set; get; }
-
+        public string MonthAllPrices { private set; get; }
         static NamedColor()
         {
             List<NamedColor> all = new List<NamedColor>();
@@ -42,9 +42,9 @@ namespace SimplePos.Model
                     NamedColor namedColor = new NamedColor
                     {
                         Name = name,
-                        FriendlyName = stringBuilder.ToString(),
+                        Period = stringBuilder.ToString(),
                         Color = color,
-                        RgbDisplay = String.Format("{0:X2}-{1:X2}-{2:X2}",
+                        MonthAllPrices = String.Format("{0:X2}-{1:X2}-{2:X2}",
                     (int)(255 * color.R),
                    (int)(255 * color.G),
                     (int)(255 * color.B))

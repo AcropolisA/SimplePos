@@ -1,30 +1,66 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SimplePos.View.C_ThridMenu.IncomeOrderListView">
-    <StackLayout>
-        <Grid HorizontalOptions="Fill"
-              VerticalOptions="FillAndExpand">
+             x:Class="SimplePos.View.C_ThridMenu.IncomeOrderListView"
+             xmlns:toolkit="clr-namespace:SimplePos.Model"
+             Title="주문 리스트">
+    <Frame>
+        <StackLayout>
+            <Grid HeightRequest="80">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height=".01*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
-            <BoxView Color="Black"/>
-            <BoxView Color="White"
-                         Margin="5"
-                         HeightRequest="70" />
+                <!-- 시간 / 분 까지만 표시 -->
+                <Label Grid.Row="0" Grid.Column="0" Text="시간" FontSize="Large" />
+                
+                <!-- 테이블 번호 표시 -->
+                <Label Grid.Row="0" Grid.Column="1" Text="테이블 번호" FontSize="Large"  />
+                
+                <!-- 총 가격 표시 -->
+                <Label Grid.Row="0" Grid.Column="2" Text="총 가격" FontSize="Large"  />
 
-                <Label Text="테이블 명"
-                       FontSize="Large"
-                       HorizontalOptions="Center"
-                       VerticalOptions="Start"/>
+                <BoxView Grid.Row="1" Grid.ColumnSpan="3" BackgroundColor="LightBlue"/>
+            </Grid>
 
-                <Label Text="시간" 
-                       FontSize="Large"
-                       HorizontalOptions="Start"
-                       VerticalOptions="Start"/>
+            <ListView ItemsSource="{x:Static toolkit:NamedColor.All}"
+              HasUnevenRows="False"
+              SeparatorVisibility="None">
+                <ListView.RowHeight>
+                    <OnPlatform x:TypeArguments="x:Int32"
+                        iOS="80"
+                        Android="80" />
+                </ListView.RowHeight>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ContentView>
+                                <Frame>
+                                    <Grid>
+                                        <!-- 첫번째 인수 -->
+                                        <Label Text="{Binding Period}" 
+                                       HorizontalOptions="Start"/>
 
-            <Label Text="총 가격" 
-                       FontSize="Large"
-                       HorizontalOptions="End"
-                       VerticalOptions="Start"/>
-        </Grid>
-    </StackLayout>
+                                        <!-- 두번째 인수 -->
+                                        <Label Text="{Binding Period}" 
+                                       HorizontalOptions="Center"/>
+
+                                        <!-- 세번째 인수 -->
+                                        <Label Text="{Binding MonthAllPrices, StringFormat='RGB={0}'}"
+                                       HorizontalOptions="End"/>
+                                    </Grid>
+                                </Frame>
+                            </ContentView>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </Frame>
 </ContentPage>

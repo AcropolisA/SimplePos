@@ -17,7 +17,7 @@ namespace SimplePos.View
         public OrderListView()
         {
             InitializeComponent();
-            tm.Text = DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss");
+            //tm.Text = DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss");
         }
         async void OnTwoSelectClicked(object sender, EventArgs e)
         {

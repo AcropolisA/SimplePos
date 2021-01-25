@@ -22,14 +22,15 @@ namespace SimplePos.View.C_ThridMenu
             Navigation.PushAsync(new IncomeMonthlyView());
         }
 
+        private void OnGoWeeklyViewTapped(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new IncomeWeeklyView());
+        }
+
         private void OnGoDailyViewTapped(object sender, EventArgs e)
         {
             Navigation.PushAsync(new IncomeDailyView());
         }
 
-        private void OnGoWeeklyViewTapped(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new IncomeWeeklyView());
-        }
     }
 }
