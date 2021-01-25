@@ -1,4 +1,5 @@
-﻿using System;
+
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
@@ -69,3 +70,4 @@ namespace SimplePos.Model
         public static readonly Color Table_9 = Color.FromRgb(0, 255, 0);
     }
 }
+

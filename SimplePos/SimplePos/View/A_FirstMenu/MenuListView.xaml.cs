@@ -17,7 +17,7 @@ namespace SimplePos.View.A_FirstMenu
         MenuListViewModel vm = new MenuListViewModel();
 
         //OrderListView Access
-        OrderListView olview = new OrderListView();
+        OrderListView orderView = new OrderListView();
 
         public MenuListView()
         {
