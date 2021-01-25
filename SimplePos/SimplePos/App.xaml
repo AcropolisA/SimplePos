@@ -7,7 +7,7 @@
     -->
     <Application.Resources>
         <ResourceDictionary>
-            <Color x:Key="Primary">#2196F3</Color>
+            <Color x:Key="Primary">#3068FF</Color>
             <Style TargetType="Button">
                 <Setter Property="TextColor" Value="White"></Setter>
                 <Setter Property="VisualStateManager.VisualStateGroups">
@@ -28,14 +28,16 @@
                 </Setter>
             </Style>
             <Style TargetType="BoxView">
-                <Setter Property="Margin" Value="3" />
-                <Setter Property="CornerRadius" Value="15" />
+                <Setter Property="Margin" Value="0" />
+            </Style>
+            <Style TargetType="Image">
+                <Setter Property="Aspect" Value="AspectFill" />
             </Style>
             <Style TargetType="Label">
-                <Setter Property="FontSize" Value="Title" />
-                <Setter Property="Margin" Value="20" />
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="FontFamily" Value="bmhannaair.ttf#bmhannaair" />
             </Style>
             <Style TargetType="Stepper">
                 <Setter Property="Margin" Value="10" />
@@ -43,12 +45,17 @@
                 <Setter Property="VerticalOptions" Value="End" />
             </Style>
             <Style TargetType="Grid">
-                <Setter Property="Margin" Value="5" />
+                <Setter Property="BackgroundColor" Value="White" />
             </Style>
             <Style TargetType="Frame">
-                <Setter Property="BorderColor" Value="Black" />
+                <Setter Property="BorderColor" Value="LightBlue" />
+                <Setter Property="HasShadow" Value="True" />
                 <Setter Property="CornerRadius" Value="10" />
-                <Setter Property="Padding" Value="17" />
+                <Setter Property="Margin" Value="5" />
+            </Style>
+            <Style TargetType="StackLayout">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
             </Style>
         </ResourceDictionary>
     </Application.Resources>
