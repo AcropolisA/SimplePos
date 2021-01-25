@@ -31,7 +31,7 @@ namespace SimplePos.Model
                     foreach (char ch in name)
                     {
                         if (index != 0 && Char.IsUpper(ch))
-                        { 
+                        {
                             stringBuilder.Append(' ');
                         }
                         stringBuilder.Append(ch);
