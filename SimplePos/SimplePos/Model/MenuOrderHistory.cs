@@ -6,8 +6,8 @@ namespace SimplePos.Model
 {
     class MenuOrderHistory
     {
-        string MenuNumber { get; set; }
-        string MenuName { get; set; }
-        string MenuPrice { get; set; }
+        //string MenuNumber { get; set; }
+        //string MenuName { get; set; }
+        //string MenuPrice { get; set; }
     }
 }

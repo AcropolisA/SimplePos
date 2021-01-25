@@ -28,12 +28,14 @@
                             <Frame Padding="0" Margin="5" OutlineColor="#40B0FF">
                                 <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
                                     <Grid.RowDefinitions>
-                                        <RowDefinition Height="55"/> 
+                                        <RowDefinition Height="55"/>
                                         <RowDefinition Height="55"/>
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
+                                    
+                                    <!-- 커밋 및 푸시용 뻘글 -->
 
                                     <!-- 메뉴 이름 -->
                                     <StackLayout Grid.Row="0" Grid.ColumnSpan="5" HorizontalOptions="Start" VerticalOptions="Start">

@@ -13,7 +13,7 @@ namespace SimplePos.Model
         public OrderDataManager()
         {
 #if DEBUG
-            MakeExample();
+            //MakeExample();
 #endif
         }
 
